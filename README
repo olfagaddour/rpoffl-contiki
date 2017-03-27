@@ -1,4 +1,7 @@
-The Contiki Operating System
+This is the implementation of the OF-FL as desribed in the paper Olfa Gaddour, Anis Koubaa, 
+Nouha Baccour, Mohamed Abid, OF-FL: QoS-aware fuzzy logic objective function for the RPL routing protocol. WiOpt 2014: 365-372
+
+
 
 Contiki is an open source, highly portable, multi-tasking operating
 system for memory-constrained networked embedded systems written by
