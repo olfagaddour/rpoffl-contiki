@@ -1,0 +1,78 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  SIGSEGV (0xb) at pc=0xb341ebf4, pid=4893, tid=3009125232
+#
+# JRE version: 6.0_26-b03
+# Java VM: Java HotSpot(TM) Client VM (20.1-b02 mixed mode, sharing linux-x86 )
+# Problematic frame:
+# C  [mtype410.cooja+0x17bf4]  long+0x1b
+#
+# If you would like to submit a bug report, please visit:
+#   http://java.sun.com/webapps/bugreport/crash.jsp
+# The crash happened outside the Java Virtual Machine in native code.
+# See problematic frame for where to report the bug.
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0xb3850800):  JavaThread "Thread-124" [_thread_in_native, id=5504, stack(0xb3569000,0xb35ba000)]
+
+siginfo:si_signo=SIGSEGV: si_errno=0, si_code=1 (SEGV_MAPERR), si_addr=0x00000000
+
+Registers:
+EAX=0x00000000, EBX=0xb342f030, ECX=0x00000000, EDX=0x00000000
+ESP=0xb343109c, EBP=0xb34310c4, ESI=0x00000000, EDI=0x00000000
+EIP=0xb341ebf4, EFLAGS=0x00010246, CR2=0x00000000
+
+Top of Stack: (sp=0xb343109c)
+0xb343109c:   b3431f84 00000000 b34310c4 b341f07b
+0xb34310ac:   b3431254 0000ea60 00000000 b3432140
+0xb34310bc:   b34321a0 00000002 b3431114 b341c121
+0xb34310cc:   b3431f84 00000000 00000010 b342f030
+0xb34310dc:   00000000 b3433b80 00000012 b3431f80
+0xb34310ec:   b77da0c0 b77da054 00000003 000080fe
+0xb34310fc:   00000000 b3420003 b3431234 15aecf00
+0xb343110c:   b3431f84 00000000 b3431144 b341c1e9 
+
+Instructions: (pc=0xb341ebf4)
+0xb341ebd4:   8b 45 fc c9 c3 55 89 e5 83 ec 28 8b 45 0c 89 44
+0xb341ebe4:   24 04 8b 45 08 89 04 24 e8 ef 00 00 00 8b 45 0c
+0xb341ebf4:   c7 00 00 00 00 00 8b 45 08 89 04 24 e8 9e ff ff
+0xb341ec04:   ff 89 45 f4 83 7d f4 00 75 0a 8b 45 08 8b 55 0c 
+
+Register to memory mapping:
+
+EAX=0x00000000 is an unknown value
+EBX=0xb342f030: udp_server_process+0xc in /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype410.cooja at 0xb3407000
+ECX=0x00000000 is an unknown value
+EDX=0x00000000 is an unknown value
+ESP=0xb343109c: <offset 0x2a09c> in /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype410.cooja at 0xb3407000
+EBP=0xb34310c4: <offset 0x2a0c4> in /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype410.cooja at 0xb3407000
+ESI=0x00000000 is an unknown value
+EDI=0x00000000 is an unknown value
+
+
+Stack: [0xb3569000,0xb35ba000],  sp=0xb343109c,  free space=4193056k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  [mtype410.cooja+0x17bf4]  long+0x1b
+C  [mtype410.cooja+0x15121]  int+0x167
+C  [mtype410.cooja+0x151e9]  update_metric_container+0x1c
+C  [mtype410.cooja+0x113f6]  rpl_set_root+0x125
+C  [mtype410.cooja+0xef27]  process_thread_udp_server_process+0x110
+C  [mtype410.cooja+0x1730f]  char+0x57
+C  [mtype410.cooja+0x17530]  double+0x13e
+C  [mtype410.cooja+0x1754d]  process_run+0x1b
+C  [mtype410.cooja+0xf492]  process_run_thread_loop+0x1f
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  se.sics.cooja.corecomm.Lib7.tick()V+0
+J  se.sics.cooja.contikimote.ContikiMote.execute(J)V
+
+[error occurred during error reporting (printing Java stack), id 0xb]
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+=>

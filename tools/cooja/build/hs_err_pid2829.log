@@ -1,0 +1,63 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  SIGSEGV (0xb) at pc=0x00000000, pid=2829, tid=2970852208
+#
+# JRE version: 6.0_26-b03
+# Java VM: Java HotSpot(TM) Client VM (20.1-b02 mixed mode, sharing linux-x86 )
+# Problematic frame:
+# C  0x00000000
+#
+# If you would like to submit a bug report, please visit:
+#   http://java.sun.com/webapps/bugreport/crash.jsp
+# The crash happened outside the Java Virtual Machine in native code.
+# See problematic frame for where to report the bug.
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0xb3263000):  JavaThread "Thread-214" [_thread_in_native, id=8050, stack(0xb10e9000,0xb113a000)]
+
+siginfo:si_signo=SIGSEGV: si_errno=0, si_code=1 (SEGV_MAPERR), si_addr=0x00000000
+
+Registers:
+EAX=0x00000000, EBX=0x00000000, ECX=0x0000000d, EDX=0x0000001e
+ESP=0xb0d0deb8, EBP=0xb0d0df74, ESI=0x00000000, EDI=0x00000000
+EIP=0x00000000, EFLAGS=0x00010212, CR2=0x00000000
+
+Top of Stack: (sp=0xb0d0deb8)
+0xb0d0deb8:   b0cf7e12 b0d09df7 0000031c 0000031d
+0xb0d0dec8:   0000031e 0000031f 00000320 00000321
+0xb0d0ded8:   00000322 00000323 00000324 00000325
+0xb0d0dee8:   00000326 00000327 00000328 00000329
+0xb0d0def8:   0000032a 0000032b 0000032c 0000032d
+0xb0d0df08:   0000032e b7640080 0000ffff 00000000
+0xb0d0df18:   b0d127a7 b0d127a8 0000ffff b0d0df64
+0xb0d0df28:   b0cfe6f0 0000ffff b0d12728 00000080 
+
+Instructions: (pc=0x00000000)
+0xffffffe0:   
+
+Register to memory mapping:
+
+EAX=0x00000000 is an unknown value
+EBX=0x00000000 is an unknown value
+ECX=0x0000000d is an unknown value
+EDX=0x0000001e is an unknown value
+ESP=0xb0d0deb8: <offset 0x28eb8> in /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype100.cooja at 0xb0ce5000
+EBP=0xb0d0df74: <offset 0x28f74> in /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype100.cooja at 0xb0ce5000
+ESI=0x00000000 is an unknown value
+EDI=0x00000000 is an unknown value
+
+
+Stack: [0xb10e9000,0xb113a000],  sp=0xb0d0deb8,  free space=4190355k
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+J  se.sics.cooja.corecomm.Lib55.tick()V
+
+[error occurred during error reporting (printing Java stack), id 0xb]
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+=>

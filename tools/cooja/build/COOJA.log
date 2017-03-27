@@ -1,0 +1,52 @@
+[15:26:52 - AWT-EventQueue-0] [GUI.java:2660] [INFO] - External tools default settings: /external_tools_linux.config
+[15:26:52 - AWT-EventQueue-0] [GUI.java:2690] [INFO] - External tools user settings: /home/user/.cooja.user.properties
+[15:27:01 - AWT-EventQueue-0] [Simulation.java:409] [INFO] - Simulation random seed: 123456
+[15:27:18 - AWT-EventQueue-0] [GUI.java:3898] [WARN] - Path is not portable: '/home/user/Desktop/contiki/examples/ipv6/rpl-udp/udp-server.c
+[15:27:19 - AWT-EventQueue-0] [CompileContiki.java:131] [INFO] - > make udp-server.sky TARGET=sky 
+[15:27:27 - AWT-EventQueue-0] [MspMote.java:253] [INFO] - Loading firmware from: /home/user/Desktop/contiki/examples/ipv6/rpl-udp/udp-server.sky
+[15:27:43 - AWT-EventQueue-0] [GUI.java:3898] [WARN] - Path is not portable: '/home/user/Desktop/contiki/examples/ipv6/rpl-udp/udp-client.c
+[15:27:44 - AWT-EventQueue-0] [CompileContiki.java:131] [INFO] - > make udp-client.sky TARGET=sky 
+[15:27:52 - AWT-EventQueue-0] [MspMote.java:253] [INFO] - Loading firmware from: /home/user/Desktop/contiki/examples/ipv6/rpl-udp/udp-client.sky
+[15:27:52 - AWT-EventQueue-0] [MspMote.java:253] [INFO] - Loading firmware from: /home/user/Desktop/contiki/examples/ipv6/rpl-udp/udp-client.sky
+[15:27:53 - AWT-EventQueue-0] [MspMote.java:253] [INFO] - Loading firmware from: /home/user/Desktop/contiki/examples/ipv6/rpl-udp/udp-client.sky
+[15:27:53 - AWT-EventQueue-0] [MspMote.java:253] [INFO] - Loading firmware from: /home/user/Desktop/contiki/examples/ipv6/rpl-udp/udp-client.sky
+[15:27:53 - AWT-EventQueue-0] [MspMote.java:253] [INFO] - Loading firmware from: /home/user/Desktop/contiki/examples/ipv6/rpl-udp/udp-client.sky
+[15:27:53 - AWT-EventQueue-0] [MspMote.java:253] [INFO] - Loading firmware from: /home/user/Desktop/contiki/examples/ipv6/rpl-udp/udp-client.sky
+[15:27:53 - AWT-EventQueue-0] [MspMote.java:253] [INFO] - Loading firmware from: /home/user/Desktop/contiki/examples/ipv6/rpl-udp/udp-client.sky
+[15:27:53 - AWT-EventQueue-0] [MspMote.java:253] [INFO] - Loading firmware from: /home/user/Desktop/contiki/examples/ipv6/rpl-udp/udp-client.sky
+[15:27:53 - AWT-EventQueue-0] [MspMote.java:253] [INFO] - Loading firmware from: /home/user/Desktop/contiki/examples/ipv6/rpl-udp/udp-client.sky
+[15:27:53 - AWT-EventQueue-0] [MspMote.java:253] [INFO] - Loading firmware from: /home/user/Desktop/contiki/examples/ipv6/rpl-udp/udp-client.sky
+[15:28:03 - Thread-1] [Simulation.java:243] [INFO] - Simulation main loop started, system time: 1332196083428
+[15:28:06 - Thread-1] [Simulation.java:297] [INFO] - Simulation main loop stopped, system time: 1332196086898	Duration: 3470 ms	Simulated time 5736 ms	Ratio 1.6530259365994235
+[15:28:43 - Thread-2] [Simulation.java:243] [INFO] - Simulation main loop started, system time: 1332196123171
+[15:28:44 - Thread-2] [Simulation.java:297] [INFO] - Simulation main loop stopped, system time: 1332196124377	Duration: 1206 ms	Simulated time 8119 ms	Ratio 6.732172470978441
+[15:28:54 - Thread-3] [Simulation.java:243] [INFO] - Simulation main loop started, system time: 1332196134069
+[15:28:55 - Thread-3] [Simulation.java:297] [INFO] - Simulation main loop stopped, system time: 1332196135320	Duration: 1251 ms	Simulated time 9935 ms	Ratio 7.941646682653877
+[15:29:00 - Thread-4] [Simulation.java:243] [INFO] - Simulation main loop started, system time: 1332196140016
+[15:29:01 - Thread-4] [Simulation.java:297] [INFO] - Simulation main loop stopped, system time: 1332196141896	Duration: 1880 ms	Simulated time 13160 ms	Ratio 7.0
+[15:30:15 - Thread-5] [GUI.java:3898] [WARN] - Path is not portable: '/home/user/Desktop/contiki/examples/ipv6/rpl-udp/udp-server.c
+[15:30:15 - Thread-5] [GUI.java:3898] [WARN] - Path is not portable: '/home/user/Desktop/contiki/examples/ipv6/rpl-udp/udp-server.sky
+[15:30:15 - Thread-5] [GUI.java:3898] [WARN] - Path is not portable: '/home/user/Desktop/contiki/examples/ipv6/rpl-udp/udp-client.c
+[15:30:15 - Thread-5] [GUI.java:3898] [WARN] - Path is not portable: '/home/user/Desktop/contiki/examples/ipv6/rpl-udp/udp-client.sky
+[15:30:15 - Thread-5] [Simulation.java:409] [INFO] - Simulation random seed: 123456
+[15:30:15 - Thread-5] [CompileContiki.java:131] [INFO] - > make udp-server.sky TARGET=sky 
+[15:30:17 - Thread-5] [CompileContiki.java:131] [INFO] - > make udp-client.sky TARGET=sky 
+[15:30:18 - Thread-5] [MspMote.java:253] [INFO] - Loading firmware from: /home/user/Desktop/contiki/examples/ipv6/rpl-udp/udp-server.sky
+[15:30:18 - Thread-5] [MspMote.java:253] [INFO] - Loading firmware from: /home/user/Desktop/contiki/examples/ipv6/rpl-udp/udp-client.sky
+[15:30:18 - Thread-5] [MspMote.java:253] [INFO] - Loading firmware from: /home/user/Desktop/contiki/examples/ipv6/rpl-udp/udp-client.sky
+[15:30:18 - Thread-5] [MspMote.java:253] [INFO] - Loading firmware from: /home/user/Desktop/contiki/examples/ipv6/rpl-udp/udp-client.sky
+[15:30:18 - Thread-5] [MspMote.java:253] [INFO] - Loading firmware from: /home/user/Desktop/contiki/examples/ipv6/rpl-udp/udp-client.sky
+[15:30:18 - Thread-5] [MspMote.java:253] [INFO] - Loading firmware from: /home/user/Desktop/contiki/examples/ipv6/rpl-udp/udp-client.sky
+[15:30:18 - Thread-5] [MspMote.java:253] [INFO] - Loading firmware from: /home/user/Desktop/contiki/examples/ipv6/rpl-udp/udp-client.sky
+[15:30:18 - Thread-5] [MspMote.java:253] [INFO] - Loading firmware from: /home/user/Desktop/contiki/examples/ipv6/rpl-udp/udp-client.sky
+[15:30:18 - Thread-5] [MspMote.java:253] [INFO] - Loading firmware from: /home/user/Desktop/contiki/examples/ipv6/rpl-udp/udp-client.sky
+[15:30:18 - Thread-5] [MspMote.java:253] [INFO] - Loading firmware from: /home/user/Desktop/contiki/examples/ipv6/rpl-udp/udp-client.sky
+[15:30:18 - Thread-5] [MspMote.java:253] [INFO] - Loading firmware from: /home/user/Desktop/contiki/examples/ipv6/rpl-udp/udp-client.sky
+[15:35:05 - AWT-EventQueue-0] [Simulation.java:409] [INFO] - Simulation random seed: 123456
+[15:35:46 - AWT-EventQueue-0] [CompileContiki.java:131] [INFO] - > make udp-sink.sky TARGET=sky 
+[15:36:12 - AWT-EventQueue-0] [CompileContiki.java:131] [INFO] - > make udp-sink.sky TARGET=sky 
+[15:36:13 - AWT-EventQueue-0] [CompileContiki.java:131] [INFO] - > make udp-sink.sky TARGET=sky 
+[15:36:27 - AWT-EventQueue-0] [CompileContiki.java:131] [INFO] - > make clean TARGET=sky 
+[15:36:28 - AWT-EventQueue-0] [CompileContiki.java:131] [INFO] - > make clean TARGET=sky 
+[15:36:54 - AWT-EventQueue-0] [CompileContiki.java:131] [INFO] - > make udp-sink.sky TARGET=sky 
+[15:37:28 - AWT-EventQueue-0] [CompileContiki.java:131] [INFO] - > make udp-sender.sky TARGET=sky 

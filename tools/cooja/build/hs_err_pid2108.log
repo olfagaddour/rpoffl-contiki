@@ -1,0 +1,1260 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  SIGSEGV (0xb) at pc=0xb771efc6, pid=2108, tid=2964937584
+#
+# JRE version: 6.0_26-b03
+# Java VM: Java HotSpot(TM) Client VM (20.1-b02 mixed mode, sharing linux-x86 )
+# Problematic frame:
+# C  [libc.so.6+0x74fc6]  unsigned long+0xe6
+#
+# If you would like to submit a bug report, please visit:
+#   http://java.sun.com/webapps/bugreport/crash.jsp
+# The crash happened outside the Java Virtual Machine in native code.
+# See problematic frame for where to report the bug.
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0xb3497800):  JavaThread "Thread-306" [_thread_in_native, id=17468, stack(0xb0b45000,0xb0b96000)]
+
+siginfo:si_signo=SIGSEGV: si_errno=0, si_code=2 (SEGV_ACCERR), si_addr=0xb0516000
+
+Registers:
+EAX=0x00000000, EBX=0x8f3167a0, ECX=0x00000014, EDX=0x8f3167a0
+ESP=0xb0b94b58, EBP=0xb0b94b88, ESI=0x084f22f8, EDI=0xb0516000
+EIP=0xb771efc6, EFLAGS=0x00010246, CR2=0xb0516000
+
+Top of Stack: (sp=0xb0b94b58)
+0xb0b94b58:   b3497800 b04f667d b050e200 084ea4f8
+0xb0b94b68:   00007e50 00000000 8f3167a0 8f3167a0
+0xb0b94b78:   b3497800 084ea4f8 b4c98fdb b3497800
+0xb0b94b88:   b0b94bd0 b4c990dd b3497920 b0b94bec
+0xb0b94b98:   00026200 00007e50 b0b94be0 6f012288
+0xb0b94ba8:   b0b94d98 b4d16980 b0b94bb0 00000000
+0xb0b94bb8:   b0b94bec 8f3169b8 00000000 8f3167a0
+0xb0b94bc8:   00000000 b0b94bf0 b0b94d98 b4e36c84 
+
+Instructions: (pc=0xb771efc6)
+0xb771efa6:   16 a4 49 f7 c6 03 00 00 00 74 0c a4 49 f7 c6 03
+0xb771efb6:   00 00 00 74 02 a4 49 50 89 c8 c1 e9 02 83 e0 03
+0xb771efc6:   f3 a5 89 c1 f3 a4 58 89 c7 89 d6 8b 44 24 04 c3
+0xb771efd6:   d1 e9 73 01 a4 d1 e9 73 02 66 a5 f3 a5 eb e8 90 
+
+Register to memory mapping:
+
+EAX=0x00000000 is an unknown value
+EBX=0x8f3167a0 is an oop
+{method} 
+ - klass: {other class}
+ECX=0x00000014 is an unknown value
+EDX=0x8f3167a0 is an oop
+{method} 
+ - klass: {other class}
+ESP=0xb0b94b58 is pointing into the stack for thread: 0xb3497800
+EBP=0xb0b94b88 is pointing into the stack for thread: 0xb3497800
+ESI=0x084f22f8 is an unknown value
+EDI=0xb0516000: <offset 0> in /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype404.cooja at 0xb0516000
+
+
+Stack: [0xb0b45000,0xb0b96000],  sp=0xb0b94b58,  free space=318k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  [libc.so.6+0x74fc6]  unsigned long+0xe6
+j  se.sics.cooja.corecomm.Lib78.setMemory(II[B)V+0
+J  se.sics.cooja.contikimote.ContikiMoteType.setCoreMemory(Lse/sics/cooja/SectionMoteMemory;)V
+v  ~StubRoutines::call_stub
+V  [libjvm.so+0x24cc61]  JavaCalls::call_helper(JavaValue*, methodHandle*, JavaCallArguments*, Thread*)+0x1c1
+V  [libjvm.so+0x38d288]  os::os_exception_wrapper(void (*)(JavaValue*, methodHandle*, JavaCallArguments*, Thread*), JavaValue*, methodHandle*, JavaCallArguments*, Thread*)+0x18
+V  [libjvm.so+0x24c4d5]  JavaCalls::call_virtual(JavaValue*, KlassHandle, symbolHandle, symbolHandle, JavaCallArguments*, Thread*)+0xc5
+V  [libjvm.so+0x24c598]  JavaCalls::call_virtual(JavaValue*, Handle, KlassHandle, symbolHandle, symbolHandle, Thread*)+0x58
+V  [libjvm.so+0x2d1037]  thread_entry(JavaThread*, Thread*)+0xa7
+V  [libjvm.so+0x4359ff]  JavaThread::run()+0x11f
+V  [libjvm.so+0x38eade]  java_start(Thread*)+0x14e
+C  [libpthread.so.0+0x596e]  short+0xbe
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  se.sics.cooja.corecomm.Lib78.setMemory(II[B)V+0
+J  se.sics.cooja.contikimote.ContikiMoteType.setCoreMemory(Lse/sics/cooja/SectionMoteMemory;)V
+J  se.sics.cooja.contikimote.ContikiMote.execute(J)V
+J  se.sics.cooja.motes.AbstractWakeupMote$1.execute(J)V
+J  se.sics.cooja.Simulation.run()V
+j  java.lang.Thread.run()V+11
+v  ~StubRoutines::call_stub
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+=>0xb3497800 JavaThread "Thread-306" [_thread_in_native, id=17468, stack(0xb0b45000,0xb0b96000)]
+  0xb2211c00 JavaThread "Thread-304" [_thread_blocked, id=17456, stack(0xb03c5000,0xb0416000)]
+  0x085f3c00 JavaThread "Thread-302" [_thread_blocked, id=17401, stack(0xafac1000,0xafb12000)]
+  0xb2214c00 JavaThread "Thread-298" [_thread_blocked, id=17344, stack(0xafc34000,0xafc85000)]
+  0xb22bbc00 JavaThread "Thread-296" [_thread_blocked, id=17289, stack(0xafe64000,0xafeb5000)]
+  0xb340ac00 JavaThread "Thread-295" [_thread_blocked, id=15976, stack(0xafd06000,0xafd57000)]
+  0xb2249c00 JavaThread "Thread-293" [_thread_blocked, id=15964, stack(0xaff85000,0xaffd6000)]
+  0x085f2c00 JavaThread "Thread-291" [_thread_blocked, id=15915, stack(0xafd86000,0xafdd7000)]
+  0xb3409c00 JavaThread "Thread-290" [_thread_blocked, id=15871, stack(0xb0125000,0xb0176000)]
+  0x085f2000 JavaThread "Thread-288" [_thread_blocked, id=15859, stack(0xb0c16000,0xb0c67000)]
+  0x085cfc00 JavaThread "Thread-286" [_thread_blocked, id=15810, stack(0xb0496000,0xb04e7000)]
+  0xb224b800 JavaThread "Thread-282" [_thread_blocked, id=14671, stack(0xafeb5000,0xaff06000)]
+  0x085e1000 JavaThread "Thread-280" [_thread_blocked, id=14616, stack(0xaffd6000,0xb0027000)]
+  0xb340a000 JavaThread "Thread-279" [_thread_blocked, id=14572, stack(0xb0055000,0xb00a6000)]
+  0x085cdc00 JavaThread "Thread-277" [_thread_blocked, id=14560, stack(0xb0176000,0xb01c7000)]
+  0xb3409400 JavaThread "Thread-275" [_thread_blocked, id=14511, stack(0xb0374000,0xb03c5000)]
+  0xb3f80000 JavaThread "Thread-274" [_thread_blocked, id=14467, stack(0xb0323000,0xb0374000)]
+  0xb226a400 JavaThread "Thread-272" [_thread_blocked, id=14455, stack(0xb06e7000,0xb0738000)]
+  0xb22a0400 JavaThread "Thread-270" [_thread_blocked, id=14406, stack(0xb02a3000,0xb02f4000)]
+  0x085dbc00 JavaThread "Thread-266" [_thread_blocked, id=14313, stack(0xb0252000,0xb02a3000)]
+  0x085d5400 JavaThread "Thread-264" [_thread_blocked, id=14258, stack(0xb05c5000,0xb0616000)]
+  0xb3f7f800 JavaThread "Thread-263" [_thread_blocked, id=14214, stack(0xb0445000,0xb0496000)]
+  0x085d3800 JavaThread "Thread-261" [_thread_blocked, id=14202, stack(0xb0574000,0xb05c5000)]
+  0xb3f7e000 JavaThread "Thread-260" [_thread_blocked, id=14164, stack(0xb0889000,0xb08da000)]
+  0x085cec00 JavaThread "Thread-258" [_thread_blocked, id=14152, stack(0xb0989000,0xb09da000)]
+  0x085ca800 JavaThread "Thread-256" [_thread_blocked, id=14103, stack(0xb0767000,0xb07b8000)]
+  0xb3f7b400 JavaThread "Thread-252" [_thread_blocked, id=14001, stack(0xb0645000,0xb0696000)]
+  0xb3f7c800 JavaThread "Thread-250" [_thread_blocked, id=13946, stack(0xb0696000,0xb06e7000)]
+  0xb3f7ac00 JavaThread "Thread-249" [_thread_blocked, id=13902, stack(0xb07b8000,0xb0809000)]
+  0xb222dc00 JavaThread "Thread-247" [_thread_blocked, id=13890, stack(0xb0838000,0xb0889000)]
+  0xb2223c00 JavaThread "Thread-245" [_thread_blocked, id=13841, stack(0xb08da000,0xb092b000)]
+  0xb3f3f400 JavaThread "Thread-244" [_thread_blocked, id=13797, stack(0xb0cb8000,0xb0d09000)]
+  0x085bac00 JavaThread "Thread-242" [_thread_blocked, id=13785, stack(0xb0d89000,0xb0dda000)]
+  0xb2269000 JavaThread "Thread-238" [_thread_blocked, id=13688, stack(0xb09da000,0xb0a2b000)]
+  0xb2284400 JavaThread "Thread-236" [_thread_blocked, id=13633, stack(0xb0ecd000,0xb0f1e000)]
+  0xb3f79800 JavaThread "Thread-235" [_thread_blocked, id=13585, stack(0xb1062000,0xb10b3000)]
+  0xb2266000 JavaThread "Thread-230" [_thread_blocked, id=13527, stack(0xb1233000,0xb1284000)]
+  0x084c0c00 JavaThread "Thread-228" [_thread_blocked, id=13472, stack(0xb0d38000,0xb0d89000)]
+  0xb2228c00 JavaThread "Thread-224" [_thread_blocked, id=13404, stack(0xb0fc0000,0xb1011000)]
+  0xb2220c00 JavaThread "Thread-222" [_thread_blocked, id=13349, stack(0xb1835000,0xb1886000)]
+  0xb3493800 JavaThread "Thread-218" [_thread_blocked, id=13255, stack(0xb0b96000,0xb0be7000)]
+  0xb3495000 JavaThread "Thread-216" [_thread_blocked, id=13200, stack(0xb0c67000,0xb0cb8000)]
+  0xb3492c00 JavaThread "Thread-215" [_thread_blocked, id=13156, stack(0xb0f6f000,0xb0fc0000)]
+  0xb2264c00 JavaThread "Thread-213" [_thread_blocked, id=13144, stack(0xb0e7c000,0xb0ecd000)]
+  0xb3490400 JavaThread "Thread-212" [_thread_blocked, id=13106, stack(0xb0dda000,0xb0e2b000)]
+  0xb2285800 JavaThread "Thread-210" [_thread_blocked, id=13094, stack(0xb0e2b000,0xb0e7c000)]
+  0xb3491400 JavaThread "Thread-209" [_thread_blocked, id=11976, stack(0xb1011000,0xb1062000)]
+  0xb2279800 JavaThread "Thread-207" [_thread_blocked, id=11964, stack(0xb0f1e000,0xb0f6f000)]
+  0xb3f01000 JavaThread "Thread-206" [_thread_blocked, id=11872, stack(0xb10b3000,0xb1104000)]
+  0xb222ac00 JavaThread "Thread-204" [_thread_blocked, id=11860, stack(0xb1961000,0xb19b2000)]
+  0xb3492400 JavaThread "Thread-203" [_thread_blocked, id=10726, stack(0xb1184000,0xb11d5000)]
+  0x085ff800 JavaThread "Thread-201" [_thread_blocked, id=10714, stack(0xb1133000,0xb1184000)]
+  0xb2222000 JavaThread "Thread-197" [_thread_blocked, id=9575, stack(0xb1385000,0xb13d6000)]
+  0xb2227c00 JavaThread "Thread-195" [_thread_blocked, id=9520, stack(0xb1284000,0xb12d5000)]
+  0xb226d400 JavaThread "Thread-191" [_thread_blocked, id=8381, stack(0xb1435000,0xb1486000)]
+  0x085fe800 JavaThread "Thread-189" [_thread_blocked, id=8326, stack(0xb1486000,0xb14d7000)]
+  0xb226e000 JavaThread "Thread-185" [_thread_blocked, id=7189, stack(0xb1334000,0xb1385000)]
+  0xb2264400 JavaThread "Thread-183" [_thread_blocked, id=7134, stack(0xb1586000,0xb15d7000)]
+  0x08598000 JavaThread "Thread-179" [_thread_blocked, id=7066, stack(0xb1535000,0xb1586000)]
+  0x08595400 JavaThread "Thread-177" [_thread_blocked, id=7011, stack(0xb1734000,0xb1785000)]
+  0xb220a400 JavaThread "Thread-173" [_thread_blocked, id=6927, stack(0xb1685000,0xb16d6000)]
+  0x083f5400 JavaThread "Thread-171" [_thread_blocked, id=6872, stack(0xb19b2000,0xb1a03000)]
+  0xb222bc00 JavaThread "Thread-167" [_thread_blocked, id=6806, stack(0xb1634000,0xb1685000)]
+  0xb224dc00 JavaThread "Thread-165" [_thread_blocked, id=6751, stack(0xb2746000,0xb2797000)]
+  0xb2250c00 JavaThread "Thread-161" [_thread_blocked, id=6675, stack(0xb18b4000,0xb1905000)]
+  0x083f0800 JavaThread "Thread-159" [_thread_blocked, id=6620, stack(0xb1d1d000,0xb1d6e000)]
+  0xb2252400 JavaThread "Thread-155" [_thread_blocked, id=6545, stack(0xb17e4000,0xb1835000)]
+  0xb2204000 JavaThread "Thread-153" [_thread_blocked, id=6490, stack(0xb1a81000,0xb1ad2000)]
+  0xb3f3e800 JavaThread "Thread-152" [_thread_blocked, id=6446, stack(0xb1ba1000,0xb1bf2000)]
+  0x085fb400 JavaThread "Thread-150" [_thread_blocked, id=6434, stack(0xb1ad2000,0xb1b23000)]
+  0xb3f3e000 JavaThread "Thread-145" [_thread_blocked, id=5452, stack(0xb1a30000,0xb1a81000)]
+  0xb2202c00 JavaThread "Thread-143" [_thread_blocked, id=5397, stack(0xb1b50000,0xb1ba1000)]
+  0xb3f3d800 JavaThread "Thread-142" [_thread_blocked, id=5353, stack(0xb1bf2000,0xb1c43000)]
+  0x0859c000 JavaThread "Thread-140" [_thread_blocked, id=5341, stack(0xb1dec000,0xb1e3d000)]
+  0xb3f3b000 JavaThread "Thread-139" [_thread_blocked, id=5303, stack(0xb2104000,0xb2155000)]
+  0x085b0000 JavaThread "Thread-137" [_thread_blocked, id=5291, stack(0xb1d9b000,0xb1dec000)]
+  0x085a7c00 JavaThread "Thread-133" [_thread_blocked, id=5203, stack(0xb1ebb000,0xb1f0c000)]
+  0x085b6c00 JavaThread "Thread-131" [_thread_blocked, id=5148, stack(0xb1e3d000,0xb1e8e000)]
+  0xb2208400 JavaThread "Thread-127" [_thread_blocked, id=5082, stack(0xb1ccc000,0xb1d1d000)]
+  0x0860fc00 JavaThread "Thread-125" [_thread_blocked, id=5027, stack(0xb1f5d000,0xb1fae000)]
+  0xb3f3d400 JavaThread "Thread-124" [_thread_blocked, id=4983, stack(0xb1f0c000,0xb1f5d000)]
+  0x0860c400 JavaThread "Thread-122" [_thread_blocked, id=4971, stack(0xb2008000,0xb2059000)]
+  0xb3f3b800 JavaThread "Thread-121" [_thread_blocked, id=4933, stack(0xb2059000,0xb20aa000)]
+  0x08549000 JavaThread "Thread-119" [_thread_blocked, id=4921, stack(0xb2155000,0xb21a6000)]
+  0x0854a800 JavaThread "Thread-115" [_thread_blocked, id=4835, stack(0xb2911000,0xb2962000)]
+  0x084ba000 JavaThread "Thread-113" [_thread_blocked, id=4780, stack(0xb23b0000,0xb2401000)]
+  0xb2206400 JavaThread "Thread-108" [_thread_blocked, id=4713, stack(0xb247f000,0xb24d0000)]
+  0xb2202800 JavaThread "Thread-106" [_thread_blocked, id=4658, stack(0xb2866000,0xb28b7000)]
+  0xb2202000 JavaThread "Thread-102" [_thread_blocked, id=4422, stack(0xb2401000,0xb2452000)]
+  0x0854c400 JavaThread "Thread-100" [_thread_blocked, id=4367, stack(0xb2332000,0xb2383000)]
+  0xb343f800 JavaThread "Thread-96" [_thread_blocked, id=4173, stack(0xb24d0000,0xb2521000)]
+  0x084d0c00 JavaThread "Thread-94" [_thread_blocked, id=4118, stack(0xb2521000,0xb2572000)]
+  0xb3400400 JavaThread "Thread-93" [_thread_blocked, id=4074, stack(0xb2797000,0xb27e8000)]
+  0x0825ec00 JavaThread "Thread-91" [_thread_blocked, id=4062, stack(0xb2a0d000,0xb2a5e000)]
+  0x084bcc00 JavaThread "Thread-86" [_thread_blocked, id=3991, stack(0xb2adc000,0xb2b2d000)]
+  0x08252400 JavaThread "Thread-84" [_thread_blocked, id=3936, stack(0xb26a4000,0xb26f5000)]
+  0xb3437000 JavaThread "Thread-80" [_thread_blocked, id=3866, stack(0xb2653000,0xb26a4000)]
+  0x082a5000 JavaThread "Thread-78" [_thread_blocked, id=3811, stack(0xb26f5000,0xb2746000)]
+  0xb3434400 JavaThread "Thread-77" [_thread_blocked, id=3767, stack(0xb2815000,0xb2866000)]
+  0xb3435800 JavaThread "Thread-75" [_thread_blocked, id=3755, stack(0xb384b000,0xb389c000)]
+  0xb3438000 JavaThread "Thread-73" [_thread_blocked, id=3706, stack(0xb2b87000,0xb2bd8000)]
+  0xb3433000 JavaThread "Thread-69" [_thread_blocked, id=3627, stack(0xb2a8b000,0xb2adc000)]
+  0xb3485c00 JavaThread "Thread-67" [_thread_blocked, id=3572, stack(0xb3139000,0xb318a000)]
+  0xb3f94800 JavaThread "Thread-63" [_thread_blocked, id=3505, stack(0xb29bc000,0xb2a0d000)]
+  0xb343f400 JavaThread "Thread-61" [_thread_blocked, id=3450, stack(0xb2f1d000,0xb2f6e000)]
+  0xb343a000 JavaThread "Thread-60" [_thread_blocked, id=3406, stack(0xb2cb0000,0xb2d01000)]
+  0x084ad000 JavaThread "Thread-58" [_thread_blocked, id=3394, stack(0xb2e9f000,0xb2ef0000)]
+  0xb349d400 JavaThread "Thread-54" [_thread_blocked, id=3336, stack(0xb2c5f000,0xb2cb0000)]
+  0x08229c00 JavaThread "Thread-52" [_thread_blocked, id=3281, stack(0xb2d7f000,0xb2dd0000)]
+  0xb349ac00 JavaThread "Thread-51" [_thread_blocked, id=3237, stack(0xb308e000,0xb30df000)]
+  0xb3499c00 JavaThread "Thread-49" [_thread_blocked, id=3225, stack(0xb303d000,0xb308e000)]
+  0x082d4400 JavaThread "Thread-45" [_thread_blocked, id=3152, stack(0xb2d2e000,0xb2d7f000)]
+  0xb3f75800 JavaThread "Thread-43" [_thread_blocked, id=3097, stack(0xb2dd0000,0xb2e21000)]
+  0xb3f74c00 JavaThread "Thread-42" [_thread_blocked, id=3053, stack(0xb2e4e000,0xb2e9f000)]
+  0xb3f73400 JavaThread "Thread-40" [_thread_blocked, id=3041, stack(0xb2f6e000,0xb2fbf000)]
+  0x082d1c00 JavaThread "Thread-38" [_thread_blocked, id=2992, stack(0xb2fbf000,0xb3010000)]
+  0xb3f73000 JavaThread "Thread-37" [_thread_blocked, id=2948, stack(0xb3235000,0xb3286000)]
+  0x0829d000 JavaThread "Thread-35" [_thread_blocked, id=2936, stack(0xb318a000,0xb31db000)]
+  0x08228c00 JavaThread "Thread-33" [_thread_blocked, id=2887, stack(0xb3531000,0xb3582000)]
+  0xb3f51c00 JavaThread "Thread-28" [_thread_blocked, id=2818, stack(0xb3286000,0xb32d7000)]
+  0xb3f21c00 JavaThread "Thread-26" [_thread_blocked, id=2763, stack(0xb393e000,0xb398f000)]
+  0xb3f84c00 JavaThread "Thread-22" [_thread_blocked, id=2694, stack(0xb3382000,0xb33d3000)]
+  0x082dc800 JavaThread "Thread-20" [_thread_blocked, id=2639, stack(0xb3331000,0xb3382000)]
+  0xb3f9ac00 JavaThread "Thread-16" [_thread_blocked, id=2573, stack(0xb389c000,0xb38ed000)]
+  0xb348e000 JavaThread "Thread-14" [_thread_blocked, id=2518, stack(0xb3582000,0xb35d3000)]
+  0x084a3800 JavaThread "Thread-10" [_thread_blocked, id=2348, stack(0xb3eaf000,0xb3f00000)]
+  0x084a1400 JavaThread "Thread-8" [_thread_blocked, id=2293, stack(0xb37cd000,0xb381e000)]
+  0x08537400 JavaThread "Thread-4" [_thread_blocked, id=2225, stack(0xb377c000,0xb37cd000)]
+  0x08624400 JavaThread "Thread-2" [_thread_blocked, id=2170, stack(0xb38ed000,0xb393e000)]
+  0x0837a000 JavaThread "TimerQueue" daemon [_thread_blocked, id=2125, stack(0xb3e5e000,0xb3eaf000)]
+  0x08207000 JavaThread "DestroyJavaVM" [_thread_blocked, id=2112, stack(0xb6d12000,0xb6d63000)]
+  0x08364000 JavaThread "AWT-EventQueue-0" [_thread_blocked, id=2123, stack(0xb4044000,0xb4095000)]
+  0x08363000 JavaThread "AWT-Shutdown" [_thread_blocked, id=2122, stack(0xb411c000,0xb416d000)]
+  0x08361c00 JavaThread "AWT-XAWT" daemon [_thread_in_native, id=2121, stack(0xb416d000,0xb41be000)]
+  0x08329000 JavaThread "Java2D Disposer" daemon [_thread_blocked, id=2120, stack(0xb41e9000,0xb423a000)]
+  0x0824bc00 JavaThread "Low Memory Detector" daemon [_thread_blocked, id=2118, stack(0xb45bf000,0xb4610000)]
+  0x08240400 JavaThread "C1 CompilerThread0" daemon [_thread_blocked, id=2117, stack(0xb4610000,0xb4691000)]
+  0x0823ec00 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=2116, stack(0xb4691000,0xb46e2000)]
+  0x08239800 JavaThread "Finalizer" daemon [_thread_blocked, id=2115, stack(0xb4728000,0xb4779000)]
+  0x08235000 JavaThread "Reference Handler" daemon [_thread_blocked, id=2114, stack(0xb4779000,0xb47ca000)]
+
+Other Threads:
+  0x0822a800 VMThread [stack: 0xb4996000,0xb4a17000] [id=2113]
+  0x0824dc00 WatcherThread [stack: 0xb453e000,0xb45bf000] [id=2119]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap
+ def new generation   total 16192K, used 3727K [0x6ed90000, 0x6ff20000, 0x79830000)
+  eden space 14400K,  20% used [0x6ed90000, 0x6f064098, 0x6fba0000)
+  from space 1792K,  46% used [0x6fba0000, 0x6fc6fe50, 0x6fd60000)
+  to   space 1792K,   0% used [0x6fd60000, 0x6fd60000, 0x6ff20000)
+ tenured generation   total 34832K, used 14396K [0x79830000, 0x7ba34000, 0x8ed90000)
+   the space 34832K,  41% used [0x79830000, 0x7a63f158, 0x7a63f200, 0x7ba34000)
+ compacting perm gen  total 12288K, used 5660K [0x8ed90000, 0x8f990000, 0x92d90000)
+   the space 12288K,  46% used [0x8ed90000, 0x8f3170c8, 0x8f317200, 0x8f990000)
+    ro space 10240K,  61% used [0x92d90000, 0x933b9d08, 0x933b9e00, 0x93790000)
+    rw space 12288K,  60% used [0x93790000, 0x93ecc660, 0x93ecc800, 0x94390000)
+
+Code Cache  [0xb4c8f000, 0xb51cf000, 0xb6c8f000)
+ total_blobs=3094 nmethods=2827 adapters=197 free_code_cache=28053888 largest_free_block=384
+
+Dynamic libraries:
+08048000-08052000 r-xp 00000000 08:02 241919     /usr/lib/jvm/java-6-sun-1.6.0.26/jre/bin/java
+08052000-08053000 rwxp 00009000 08:02 241919     /usr/lib/jvm/java-6-sun-1.6.0.26/jre/bin/java
+08201000-0869e000 rwxp 00000000 00:00 0          [heap]
+6ed90000-6ff20000 rwxp 00000000 00:00 0 
+6ff20000-74300000 ---p 00000000 00:00 0 
+74300000-79830000 rwxp 00000000 00:00 0 
+79830000-7ba34000 rwxp 00000000 00:00 0 
+7ba34000-842ab000 ---p 00000000 00:00 0 
+842ab000-8ed90000 rwxp 00000000 00:00 0 
+8ed90000-8f990000 rwxp 00000000 00:00 0 
+8f990000-92d90000 rwxp 00000000 00:00 0 
+92d90000-933ba000 r-xs 00001000 08:02 128946     /usr/lib/jvm/java-6-sun-1.6.0.26/jre/lib/i386/client/classes.jsa
+933ba000-93790000 rwxp 00000000 00:00 0 
+93790000-93ecd000 rwxp 0062b000 08:02 128946     /usr/lib/jvm/java-6-sun-1.6.0.26/jre/lib/i386/client/classes.jsa
+93ecd000-94390000 rwxp 00000000 00:00 0 
+94390000-94472000 rwxp 00d68000 08:02 128946     /usr/lib/jvm/java-6-sun-1.6.0.26/jre/lib/i386/client/classes.jsa
+94472000-94790000 rwxp 00000000 00:00 0 
+94790000-94798000 r-xs 00e4a000 08:02 128946     /usr/lib/jvm/java-6-sun-1.6.0.26/jre/lib/i386/client/classes.jsa
+94798000-94b90000 rwxp 00000000 00:00 0 
+afa32000-afa58000 r-xp 00000000 08:05 585249     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype947.cooja
+afa58000-afa59000 r-xp 00025000 08:05 585249     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype947.cooja
+afa59000-afa5a000 rwxp 00026000 08:05 585249     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype947.cooja
+afa5a000-afa62000 rwxp 00000000 00:00 0 
+afa62000-afa87000 r-xp 00000000 08:05 585131     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype911.cooja
+afa87000-afa88000 r-xp 00024000 08:05 585131     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype911.cooja
+afa88000-afa89000 rwxp 00025000 08:05 585131     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype911.cooja
+afa89000-afa91000 rwxp 00000000 00:00 0 
+afa91000-afab7000 r-xp 00000000 08:05 585122     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype543.cooja
+afab7000-afab8000 r-xp 00025000 08:05 585122     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype543.cooja
+afab8000-afab9000 rwxp 00026000 08:05 585122     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype543.cooja
+afab9000-afac1000 rwxp 00000000 00:00 0 
+afac1000-afac4000 ---p 00000000 00:00 0 
+afac4000-afb12000 rwxp 00000000 00:00 0 
+afb12000-afb15000 ---p 00000000 00:00 0 
+afb15000-afb63000 rwxp 00000000 00:00 0 
+afb63000-afb88000 r-xp 00000000 08:05 585118     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype785.cooja
+afb88000-afb89000 r-xp 00024000 08:05 585118     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype785.cooja
+afb89000-afb8a000 rwxp 00025000 08:05 585118     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype785.cooja
+afb8a000-afb92000 rwxp 00000000 00:00 0 
+afb92000-afb95000 ---p 00000000 00:00 0 
+afb95000-afbe3000 rwxp 00000000 00:00 0 
+afbe3000-afbe6000 ---p 00000000 00:00 0 
+afbe6000-afc34000 rwxp 00000000 00:00 0 
+afc34000-afc37000 ---p 00000000 00:00 0 
+afc37000-afc85000 rwxp 00000000 00:00 0 
+afc85000-afcab000 r-xp 00000000 08:05 588207     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype434.cooja (deleted)
+afcab000-afcac000 r-xp 00025000 08:05 588207     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype434.cooja (deleted)
+afcac000-afcad000 rwxp 00026000 08:05 588207     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype434.cooja (deleted)
+afcad000-afcb5000 rwxp 00000000 00:00 0 
+afcb5000-afcb8000 ---p 00000000 00:00 0 
+afcb8000-afd06000 rwxp 00000000 00:00 0 
+afd06000-afd09000 ---p 00000000 00:00 0 
+afd09000-afd57000 rwxp 00000000 00:00 0 
+afd57000-afd7c000 r-xp 00000000 08:05 588209     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype905.cooja (deleted)
+afd7c000-afd7d000 r-xp 00024000 08:05 588209     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype905.cooja (deleted)
+afd7d000-afd7e000 rwxp 00025000 08:05 588209     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype905.cooja (deleted)
+afd7e000-afd86000 rwxp 00000000 00:00 0 
+afd86000-afd89000 ---p 00000000 00:00 0 
+afd89000-afdd7000 rwxp 00000000 00:00 0 
+afdd7000-afdfd000 r-xp 00000000 08:05 588203     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype280.cooja (deleted)
+afdfd000-afdfe000 r-xp 00025000 08:05 588203     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype280.cooja (deleted)
+afdfe000-afdff000 rwxp 00026000 08:05 588203     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype280.cooja (deleted)
+afdff000-afe07000 rwxp 00000000 00:00 0 
+afe07000-afe2c000 r-xp 00000000 08:05 588205     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype744.cooja (deleted)
+afe2c000-afe2d000 r-xp 00024000 08:05 588205     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype744.cooja (deleted)
+afe2d000-afe2e000 rwxp 00025000 08:05 588205     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype744.cooja (deleted)
+afe2e000-afe36000 rwxp 00000000 00:00 0 
+afe36000-afe5b000 r-xp 00000000 08:05 588201     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype360.cooja (deleted)
+afe5b000-afe5c000 r-xp 00024000 08:05 588201     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype360.cooja (deleted)
+afe5c000-afe5d000 rwxp 00025000 08:05 588201     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype360.cooja (deleted)
+afe5d000-afe64000 rwxp 00000000 00:00 0 
+afe64000-afe67000 ---p 00000000 00:00 0 
+afe67000-afeb5000 rwxp 00000000 00:00 0 
+afeb5000-afeb8000 ---p 00000000 00:00 0 
+afeb8000-aff06000 rwxp 00000000 00:00 0 
+aff06000-aff2b000 r-xp 00000000 08:05 588197     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype272.cooja (deleted)
+aff2b000-aff2c000 r-xp 00024000 08:05 588197     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype272.cooja (deleted)
+aff2c000-aff2d000 rwxp 00025000 08:05 588197     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype272.cooja (deleted)
+aff2d000-aff34000 rwxp 00000000 00:00 0 
+aff34000-aff37000 ---p 00000000 00:00 0 
+aff37000-aff85000 rwxp 00000000 00:00 0 
+aff85000-aff88000 ---p 00000000 00:00 0 
+aff88000-affd6000 rwxp 00000000 00:00 0 
+affd6000-affd9000 ---p 00000000 00:00 0 
+affd9000-b0027000 rwxp 00000000 00:00 0 
+b0027000-b004c000 r-xp 00000000 08:05 588191     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype294.cooja (deleted)
+b004c000-b004d000 r-xp 00024000 08:05 588191     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype294.cooja (deleted)
+b004d000-b004e000 rwxp 00025000 08:05 588191     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype294.cooja (deleted)
+b004e000-b0055000 rwxp 00000000 00:00 0 
+b0055000-b0058000 ---p 00000000 00:00 0 
+b0058000-b00a6000 rwxp 00000000 00:00 0 
+b00a6000-b00a9000 ---p 00000000 00:00 0 
+b00a9000-b00f7000 rwxp 00000000 00:00 0 
+b00f7000-b011c000 r-xp 00000000 08:05 588193     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype85.cooja (deleted)
+b011c000-b011d000 r-xp 00024000 08:05 588193     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype85.cooja (deleted)
+b011d000-b011e000 rwxp 00025000 08:05 588193     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype85.cooja (deleted)
+b011e000-b0125000 rwxp 00000000 00:00 0 
+b0125000-b0128000 ---p 00000000 00:00 0 
+b0128000-b0176000 rwxp 00000000 00:00 0 
+b0176000-b0179000 ---p 00000000 00:00 0 
+b0179000-b01c7000 rwxp 00000000 00:00 0 
+b01c7000-b01ec000 r-xp 00000000 08:05 588187     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype137.cooja (deleted)
+b01ec000-b01ed000 r-xp 00024000 08:05 588187     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype137.cooja (deleted)
+b01ed000-b01ee000 rwxp 00025000 08:05 588187     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype137.cooja (deleted)
+b01ee000-b01f5000 rwxp 00000000 00:00 0 
+b01f5000-b021a000 r-xp 00000000 08:05 588189     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype840.cooja (deleted)
+b021a000-b021b000 r-xp 00024000 08:05 588189     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype840.cooja (deleted)
+b021b000-b021c000 rwxp 00025000 08:05 588189     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype840.cooja (deleted)
+b021c000-b0223000 rwxp 00000000 00:00 0 
+b0223000-b0249000 r-xp 00000000 08:05 588185     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype307.cooja (deleted)
+b0249000-b024a000 r-xp 00025000 08:05 588185     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype307.cooja (deleted)
+b024a000-b024b000 rwxp 00026000 08:05 588185     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype307.cooja (deleted)
+b024b000-b0252000 rwxp 00000000 00:00 0 
+b0252000-b0255000 ---p 00000000 00:00 0 
+b0255000-b02a3000 rwxp 00000000 00:00 0 
+b02a3000-b02a6000 ---p 00000000 00:00 0 
+b02a6000-b02f4000 rwxp 00000000 00:00 0 
+b02f4000-b031a000 r-xp 00000000 08:05 588181     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype888.cooja (deleted)
+b031a000-b031b000 r-xp 00025000 08:05 588181     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype888.cooja (deleted)
+b031b000-b031c000 rwxp 00026000 08:05 588181     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype888.cooja (deleted)
+b031c000-b0323000 rwxp 00000000 00:00 0 
+b0323000-b0326000 ---p 00000000 00:00 0 
+b0326000-b0374000 rwxp 00000000 00:00 0 
+b0374000-b0377000 ---p 00000000 00:00 0 
+b0377000-b03c5000 rwxp 00000000 00:00 0 
+b03c5000-b03c8000 ---p 00000000 00:00 0 
+b03c8000-b0416000 rwxp 00000000 00:00 0 
+b0416000-b043c000 r-xp 00000000 08:05 588171     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype251.cooja (deleted)
+b043c000-b043d000 r-xp 00025000 08:05 588171     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype251.cooja (deleted)
+b043d000-b043e000 rwxp 00026000 08:05 588171     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype251.cooja (deleted)
+b043e000-b0445000 rwxp 00000000 00:00 0 
+b0445000-b0448000 ---p 00000000 00:00 0 
+b0448000-b0496000 rwxp 00000000 00:00 0 
+b0496000-b0499000 ---p 00000000 00:00 0 
+b0499000-b04e7000 rwxp 00000000 00:00 0 
+b04e7000-b050d000 r-xp 00000000 08:05 588175     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype672.cooja (deleted)
+b050d000-b050e000 r-xp 00025000 08:05 588175     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype672.cooja (deleted)
+b050e000-b050f000 rwxp 00026000 08:05 588175     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype672.cooja (deleted)
+b050f000-b0516000 rwxp 00000000 00:00 0 
+b0516000-b053c000 r-xp 00000000 08:05 588177     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype404.cooja (deleted)
+b053c000-b053d000 r-xp 00025000 08:05 588177     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype404.cooja (deleted)
+b053d000-b053e000 rwxp 00026000 08:05 588177     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype404.cooja (deleted)
+b053e000-b0545000 rwxp 00000000 00:00 0 
+b0545000-b056b000 r-xp 00000000 08:05 588173     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype352.cooja (deleted)
+b056b000-b056c000 r-xp 00025000 08:05 588173     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype352.cooja (deleted)
+b056c000-b056d000 rwxp 00026000 08:05 588173     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype352.cooja (deleted)
+b056d000-b0574000 rwxp 00000000 00:00 0 
+b0574000-b0577000 ---p 00000000 00:00 0 
+b0577000-b05c5000 rwxp 00000000 00:00 0 
+b05c5000-b05c8000 ---p 00000000 00:00 0 
+b05c8000-b0616000 rwxp 00000000 00:00 0 
+b0616000-b063c000 r-xp 00000000 08:05 588169     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype650.cooja (deleted)
+b063c000-b063d000 r-xp 00025000 08:05 588169     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype650.cooja (deleted)
+b063d000-b063e000 rwxp 00026000 08:05 588169     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype650.cooja (deleted)
+b063e000-b0645000 rwxp 00000000 00:00 0 
+b0645000-b0648000 ---p 00000000 00:00 0 
+b0648000-b0696000 rwxp 00000000 00:00 0 
+b0696000-b0699000 ---p 00000000 00:00 0 
+b0699000-b06e7000 rwxp 00000000 00:00 0 
+b06e7000-b06ea000 ---p 00000000 00:00 0 
+b06ea000-b0738000 rwxp 00000000 00:00 0 
+b0738000-b075e000 r-xp 00000000 08:05 588163     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype244.cooja (deleted)
+b075e000-b075f000 r-xp 00025000 08:05 588163     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype244.cooja (deleted)
+b075f000-b0760000 rwxp 00026000 08:05 588163     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype244.cooja (deleted)
+b0760000-b0767000 rwxp 00000000 00:00 0 
+b0767000-b076a000 ---p 00000000 00:00 0 
+b076a000-b07b8000 rwxp 00000000 00:00 0 
+b07b8000-b07bb000 ---p 00000000 00:00 0 
+b07bb000-b0809000 rwxp 00000000 00:00 0 
+b0809000-b082f000 r-xp 00000000 08:05 588165     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype934.cooja (deleted)
+b082f000-b0830000 r-xp 00025000 08:05 588165     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype934.cooja (deleted)
+b0830000-b0831000 rwxp 00026000 08:05 588165     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype934.cooja (deleted)
+b0831000-b0838000 rwxp 00000000 00:00 0 
+b0838000-b083b000 ---p 00000000 00:00 0 
+b083b000-b0889000 rwxp 00000000 00:00 0 
+b0889000-b088c000 ---p 00000000 00:00 0 
+b088c000-b08da000 rwxp 00000000 00:00 0 
+b08da000-b08dd000 ---p 00000000 00:00 0 
+b08dd000-b092b000 rwxp 00000000 00:00 0 
+b092b000-b0951000 r-xp 00000000 08:05 588158     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype383.cooja (deleted)
+b0951000-b0952000 r-xp 00025000 08:05 588158     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype383.cooja (deleted)
+b0952000-b0953000 rwxp 00026000 08:05 588158     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype383.cooja (deleted)
+b0953000-b095a000 rwxp 00000000 00:00 0 
+b095a000-b0980000 r-xp 00000000 08:05 588160     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype533.cooja (deleted)
+b0980000-b0981000 r-xp 00025000 08:05 588160     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype533.cooja (deleted)
+b0981000-b0982000 rwxp 00026000 08:05 588160     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype533.cooja (deleted)
+b0982000-b0989000 rwxp 00000000 00:00 0 
+b0989000-b098c000 ---p 00000000 00:00 0 
+b098c000-b09da000 rwxp 00000000 00:00 0 
+b09da000-b09dd000 ---p 00000000 00:00 0 
+b09dd000-b0a2b000 rwxp 00000000 00:00 0 
+b0a2b000-b0a51000 r-xp 00000000 08:05 588156     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype386.cooja (deleted)
+b0a51000-b0a52000 r-xp 00025000 08:05 588156     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype386.cooja (deleted)
+b0a52000-b0a53000 rwxp 00026000 08:05 588156     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype386.cooja (deleted)
+b0a53000-b0a5a000 rwxp 00000000 00:00 0 
+b0a5a000-b0a80000 r-xp 00000000 08:05 588150     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype189.cooja (deleted)
+b0a80000-b0a81000 r-xp 00025000 08:05 588150     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype189.cooja (deleted)
+b0a81000-b0a82000 rwxp 00026000 08:05 588150     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype189.cooja (deleted)
+b0a82000-b0a89000 rwxp 00000000 00:00 0 
+b0a89000-b0aaf000 r-xp 00000000 08:05 588146     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype747.cooja (deleted)
+b0aaf000-b0ab0000 r-xp 00025000 08:05 588146     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype747.cooja (deleted)
+b0ab0000-b0ab1000 rwxp 00026000 08:05 588146     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype747.cooja (deleted)
+b0ab1000-b0ab8000 rwxp 00000000 00:00 0 
+b0ab8000-b0ade000 r-xp 00000000 08:05 588142     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype345.cooja (deleted)
+b0ade000-b0adf000 r-xp 00025000 08:05 588142     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype345.cooja (deleted)
+b0adf000-b0ae0000 rwxp 00026000 08:05 588142     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype345.cooja (deleted)
+b0ae0000-b0ae7000 rwxp 00000000 00:00 0 
+b0ae7000-b0b0d000 r-xp 00000000 08:05 588138     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype389.cooja (deleted)
+b0b0d000-b0b0e000 r-xp 00025000 08:05 588138     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype389.cooja (deleted)
+b0b0e000-b0b0f000 rwxp 00026000 08:05 588138     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype389.cooja (deleted)
+b0b0f000-b0b16000 rwxp 00000000 00:00 0 
+b0b16000-b0b3c000 r-xp 00000000 08:05 588133     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype606.cooja (deleted)
+b0b3c000-b0b3d000 r-xp 00025000 08:05 588133     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype606.cooja (deleted)
+b0b3d000-b0b3e000 rwxp 00026000 08:05 588133     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype606.cooja (deleted)
+b0b3e000-b0b45000 rwxp 00000000 00:00 0 
+b0b45000-b0b48000 ---p 00000000 00:00 0 
+b0b48000-b0b96000 rwxp 00000000 00:00 0 
+b0b96000-b0b99000 ---p 00000000 00:00 0 
+b0b99000-b0be7000 rwxp 00000000 00:00 0 
+b0be7000-b0c0d000 r-xp 00000000 08:05 588129     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype87.cooja (deleted)
+b0c0d000-b0c0e000 r-xp 00025000 08:05 588129     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype87.cooja (deleted)
+b0c0e000-b0c0f000 rwxp 00026000 08:05 588129     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype87.cooja (deleted)
+b0c0f000-b0c16000 rwxp 00000000 00:00 0 
+b0c16000-b0c19000 ---p 00000000 00:00 0 
+b0c19000-b0c67000 rwxp 00000000 00:00 0 
+b0c67000-b0c6a000 ---p 00000000 00:00 0 
+b0c6a000-b0cb8000 rwxp 00000000 00:00 0 
+b0cb8000-b0cbb000 ---p 00000000 00:00 0 
+b0cbb000-b0d09000 rwxp 00000000 00:00 0 
+b0d09000-b0d2f000 r-xp 00000000 08:05 587751     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype180.cooja (deleted)
+b0d2f000-b0d30000 r-xp 00025000 08:05 587751     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype180.cooja (deleted)
+b0d30000-b0d31000 rwxp 00026000 08:05 587751     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype180.cooja (deleted)
+b0d31000-b0d38000 rwxp 00000000 00:00 0 
+b0d38000-b0d3b000 ---p 00000000 00:00 0 
+b0d3b000-b0d89000 rwxp 00000000 00:00 0 
+b0d89000-b0d8c000 ---p 00000000 00:00 0 
+b0d8c000-b0dda000 rwxp 00000000 00:00 0 
+b0dda000-b0ddd000 ---p 00000000 00:00 0 
+b0ddd000-b0e2b000 rwxp 00000000 00:00 0 
+b0e2b000-b0e2e000 ---p 00000000 00:00 0 
+b0e2e000-b0e7c000 rwxp 00000000 00:00 0 
+b0e7c000-b0e7f000 ---p 00000000 00:00 0 
+b0e7f000-b0ecd000 rwxp 00000000 00:00 0 
+b0ecd000-b0ed0000 ---p 00000000 00:00 0 
+b0ed0000-b0f1e000 rwxp 00000000 00:00 0 
+b0f1e000-b0f21000 ---p 00000000 00:00 0 
+b0f21000-b0f6f000 rwxp 00000000 00:00 0 
+b0f6f000-b0f72000 ---p 00000000 00:00 0 
+b0f72000-b0fc0000 rwxp 00000000 00:00 0 
+b0fc0000-b0fc3000 ---p 00000000 00:00 0 
+b0fc3000-b1011000 rwxp 00000000 00:00 0 
+b1011000-b1014000 ---p 00000000 00:00 0 
+b1014000-b1062000 rwxp 00000000 00:00 0 
+b1062000-b1065000 ---p 00000000 00:00 0 
+b1065000-b10b3000 rwxp 00000000 00:00 0 
+b10b3000-b10b6000 ---p 00000000 00:00 0 
+b10b6000-b1104000 rwxp 00000000 00:00 0 
+b1104000-b112a000 r-xp 00000000 08:05 588116     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype2.cooja (deleted)
+b112a000-b112b000 r-xp 00025000 08:05 588116     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype2.cooja (deleted)
+b112b000-b112c000 rwxp 00026000 08:05 588116     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype2.cooja (deleted)
+b112c000-b1133000 rwxp 00000000 00:00 0 
+b1133000-b1136000 ---p 00000000 00:00 0 
+b1136000-b1184000 rwxp 00000000 00:00 0 
+b1184000-b1187000 ---p 00000000 00:00 0 
+b1187000-b11d5000 rwxp 00000000 00:00 0 
+b11d5000-b11fb000 r-xp 00000000 08:05 588112     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype485.cooja (deleted)
+b11fb000-b11fc000 r-xp 00025000 08:05 588112     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype485.cooja (deleted)
+b11fc000-b11fd000 rwxp 00026000 08:05 588112     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype485.cooja (deleted)
+b11fd000-b1204000 rwxp 00000000 00:00 0 
+b1204000-b122a000 r-xp 00000000 08:05 588108     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype224.cooja (deleted)
+b122a000-b122b000 r-xp 00025000 08:05 588108     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype224.cooja (deleted)
+b122b000-b122c000 rwxp 00026000 08:05 588108     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype224.cooja (deleted)
+b122c000-b1233000 rwxp 00000000 00:00 0 
+b1233000-b1236000 ---p 00000000 00:00 0 
+b1236000-b1284000 rwxp 00000000 00:00 0 
+b1284000-b1287000 ---p 00000000 00:00 0 
+b1287000-b12d5000 rwxp 00000000 00:00 0 
+b12d5000-b12fb000 r-xp 00000000 08:05 588104     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype290.cooja (deleted)
+b12fb000-b12fc000 r-xp 00025000 08:05 588104     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype290.cooja (deleted)
+b12fc000-b12fd000 rwxp 00026000 08:05 588104     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype290.cooja (deleted)
+b12fd000-b1304000 rwxp 00000000 00:00 0 
+b1304000-b132a000 r-xp 00000000 08:05 588100     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype293.cooja (deleted)
+b132a000-b132b000 r-xp 00025000 08:05 588100     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype293.cooja (deleted)
+b132b000-b132c000 rwxp 00026000 08:05 588100     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype293.cooja (deleted)
+b132c000-b1334000 rwxp 00000000 00:00 0 
+b1334000-b1337000 ---p 00000000 00:00 0 
+b1337000-b1385000 rwxp 00000000 00:00 0 
+b1385000-b1388000 ---p 00000000 00:00 0 
+b1388000-b13d6000 rwxp 00000000 00:00 0 
+b13d6000-b13fc000 r-xp 00000000 08:05 588096     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype124.cooja (deleted)
+b13fc000-b13fd000 r-xp 00025000 08:05 588096     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype124.cooja (deleted)
+b13fd000-b13fe000 rwxp 00026000 08:05 588096     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype124.cooja (deleted)
+b13fe000-b1406000 rwxp 00000000 00:00 0 
+b1406000-b142c000 r-xp 00000000 08:05 588092     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype850.cooja (deleted)
+b142c000-b142d000 r-xp 00025000 08:05 588092     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype850.cooja (deleted)
+b142d000-b142e000 rwxp 00026000 08:05 588092     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype850.cooja (deleted)
+b142e000-b1435000 rwxp 00000000 00:00 0 
+b1435000-b1438000 ---p 00000000 00:00 0 
+b1438000-b1486000 rwxp 00000000 00:00 0 
+b1486000-b1489000 ---p 00000000 00:00 0 
+b1489000-b14d7000 rwxp 00000000 00:00 0 
+b14d7000-b14fd000 r-xp 00000000 08:05 588088     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype89.cooja (deleted)
+b14fd000-b14fe000 r-xp 00025000 08:05 588088     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype89.cooja (deleted)
+b14fe000-b14ff000 rwxp 00026000 08:05 588088     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype89.cooja (deleted)
+b14ff000-b1506000 rwxp 00000000 00:00 0 
+b1506000-b152c000 r-xp 00000000 08:05 588084     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype453.cooja (deleted)
+b152c000-b152d000 r-xp 00025000 08:05 588084     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype453.cooja (deleted)
+b152d000-b152e000 rwxp 00026000 08:05 588084     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype453.cooja (deleted)
+b152e000-b1535000 rwxp 00000000 00:00 0 
+b1535000-b1538000 ---p 00000000 00:00 0 
+b1538000-b1586000 rwxp 00000000 00:00 0 
+b1586000-b1589000 ---p 00000000 00:00 0 
+b1589000-b15d7000 rwxp 00000000 00:00 0 
+b15d7000-b15fc000 r-xp 00000000 08:05 588080     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype662.cooja (deleted)
+b15fc000-b15fd000 r-xp 00024000 08:05 588080     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype662.cooja (deleted)
+b15fd000-b15fe000 rwxp 00025000 08:05 588080     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype662.cooja (deleted)
+b15fe000-b1605000 rwxp 00000000 00:00 0 
+b1605000-b162b000 r-xp 00000000 08:05 588076     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype493.cooja (deleted)
+b162b000-b162c000 r-xp 00025000 08:05 588076     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype493.cooja (deleted)
+b162c000-b162d000 rwxp 00026000 08:05 588076     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype493.cooja (deleted)
+b162d000-b1634000 rwxp 00000000 00:00 0 
+b1634000-b1637000 ---p 00000000 00:00 0 
+b1637000-b1685000 rwxp 00000000 00:00 0 
+b1685000-b1688000 ---p 00000000 00:00 0 
+b1688000-b16d6000 rwxp 00000000 00:00 0 
+b16d6000-b16fb000 r-xp 00000000 08:05 588072     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype253.cooja (deleted)
+b16fb000-b16fc000 r-xp 00024000 08:05 588072     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype253.cooja (deleted)
+b16fc000-b16fd000 rwxp 00025000 08:05 588072     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype253.cooja (deleted)
+b16fd000-b1704000 rwxp 00000000 00:00 0 
+b1704000-b172b000 r-xp 00000000 08:05 588068     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype645.cooja (deleted)
+b172b000-b172c000 r-xp 00026000 08:05 588068     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype645.cooja (deleted)
+b172c000-b172d000 rwxp 00027000 08:05 588068     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype645.cooja (deleted)
+b172d000-b1734000 rwxp 00000000 00:00 0 
+b1734000-b1737000 ---p 00000000 00:00 0 
+b1737000-b1785000 rwxp 00000000 00:00 0 
+b1785000-b17ac000 r-xp 00000000 08:05 588064     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype309.cooja (deleted)
+b17ac000-b17ad000 r-xp 00026000 08:05 588064     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype309.cooja (deleted)
+b17ad000-b17ae000 rwxp 00027000 08:05 588064     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype309.cooja (deleted)
+b17ae000-b17b5000 rwxp 00000000 00:00 0 
+b17b5000-b17db000 r-xp 00000000 08:05 588060     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype481.cooja (deleted)
+b17db000-b17dc000 r-xp 00025000 08:05 588060     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype481.cooja (deleted)
+b17dc000-b17dd000 rwxp 00026000 08:05 588060     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype481.cooja (deleted)
+b17dd000-b17e4000 rwxp 00000000 00:00 0 
+b17e4000-b17e7000 ---p 00000000 00:00 0 
+b17e7000-b1835000 rwxp 00000000 00:00 0 
+b1835000-b1838000 ---p 00000000 00:00 0 
+b1838000-b1886000 rwxp 00000000 00:00 0 
+b1886000-b18ab000 r-xp 00000000 08:05 588056     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype670.cooja (deleted)
+b18ab000-b18ac000 r-xp 00024000 08:05 588056     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype670.cooja (deleted)
+b18ac000-b18ad000 rwxp 00025000 08:05 588056     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype670.cooja (deleted)
+b18ad000-b18b4000 rwxp 00000000 00:00 0 
+b18b4000-b18b7000 ---p 00000000 00:00 0 
+b18b7000-b1905000 rwxp 00000000 00:00 0 
+b1905000-b192a000 r-xp 00000000 08:05 588048     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype30.cooja (deleted)
+b192a000-b192b000 r-xp 00024000 08:05 588048     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype30.cooja (deleted)
+b192b000-b192c000 rwxp 00025000 08:05 588048     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype30.cooja (deleted)
+b192c000-b1933000 rwxp 00000000 00:00 0 
+b1933000-b1958000 r-xp 00000000 08:05 588046     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype713.cooja (deleted)
+b1958000-b1959000 r-xp 00024000 08:05 588046     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype713.cooja (deleted)
+b1959000-b195a000 rwxp 00025000 08:05 588046     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype713.cooja (deleted)
+b195a000-b1961000 rwxp 00000000 00:00 0 
+b1961000-b1964000 ---p 00000000 00:00 0 
+b1964000-b19b2000 rwxp 00000000 00:00 0 
+b19b2000-b19b5000 ---p 00000000 00:00 0 
+b19b5000-b1a03000 rwxp 00000000 00:00 0 
+b1a03000-b1a27000 r-xp 00000000 08:05 588042     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype569.cooja (deleted)
+b1a27000-b1a28000 r-xp 00023000 08:05 588042     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype569.cooja (deleted)
+b1a28000-b1a29000 rwxp 00024000 08:05 588042     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype569.cooja (deleted)
+b1a29000-b1a30000 rwxp 00000000 00:00 0 
+b1a30000-b1a33000 ---p 00000000 00:00 0 
+b1a33000-b1a81000 rwxp 00000000 00:00 0 
+b1a81000-b1a84000 ---p 00000000 00:00 0 
+b1a84000-b1ad2000 rwxp 00000000 00:00 0 
+b1ad2000-b1ad5000 ---p 00000000 00:00 0 
+b1ad5000-b1b23000 rwxp 00000000 00:00 0 
+b1b23000-b1b47000 r-xp 00000000 08:05 588035     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype757.cooja (deleted)
+b1b47000-b1b48000 r-xp 00023000 08:05 588035     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype757.cooja (deleted)
+b1b48000-b1b49000 rwxp 00024000 08:05 588035     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype757.cooja (deleted)
+b1b49000-b1b50000 rwxp 00000000 00:00 0 
+b1b50000-b1b53000 ---p 00000000 00:00 0 
+b1b53000-b1ba1000 rwxp 00000000 00:00 0 
+b1ba1000-b1ba4000 ---p 00000000 00:00 0 
+b1ba4000-b1bf2000 rwxp 00000000 00:00 0 
+b1bf2000-b1bf5000 ---p 00000000 00:00 0 
+b1bf5000-b1c43000 rwxp 00000000 00:00 0 
+b1c43000-b1c68000 r-xp 00000000 08:05 588037     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype718.cooja (deleted)
+b1c68000-b1c69000 r-xp 00024000 08:05 588037     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype718.cooja (deleted)
+b1c69000-b1c6a000 rwxp 00025000 08:05 588037     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype718.cooja (deleted)
+b1c6a000-b1c71000 rwxp 00000000 00:00 0 
+b1c71000-b1c95000 r-xp 00000000 08:05 588033     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype903.cooja (deleted)
+b1c95000-b1c96000 r-xp 00023000 08:05 588033     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype903.cooja (deleted)
+b1c96000-b1c97000 rwxp 00024000 08:05 588033     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype903.cooja (deleted)
+b1c97000-b1c9e000 rwxp 00000000 00:00 0 
+b1c9e000-b1cc3000 r-xp 00000000 08:05 588029     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype373.cooja (deleted)
+b1cc3000-b1cc4000 r-xp 00024000 08:05 588029     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype373.cooja (deleted)
+b1cc4000-b1cc5000 rwxp 00025000 08:05 588029     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype373.cooja (deleted)
+b1cc5000-b1ccc000 rwxp 00000000 00:00 0 
+b1ccc000-b1ccf000 ---p 00000000 00:00 0 
+b1ccf000-b1d1d000 rwxp 00000000 00:00 0 
+b1d1d000-b1d20000 ---p 00000000 00:00 0 
+b1d20000-b1d6e000 rwxp 00000000 00:00 0 
+b1d6e000-b1d92000 r-xp 00000000 08:05 588025     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype226.cooja (deleted)
+b1d92000-b1d93000 r-xp 00023000 08:05 588025     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype226.cooja (deleted)
+b1d93000-b1d94000 rwxp 00024000 08:05 588025     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype226.cooja (deleted)
+b1d94000-b1d9b000 rwxp 00000000 00:00 0 
+b1d9b000-b1d9e000 ---p 00000000 00:00 0 
+b1d9e000-b1dec000 rwxp 00000000 00:00 0 
+b1dec000-b1def000 ---p 00000000 00:00 0 
+b1def000-b1e3d000 rwxp 00000000 00:00 0 
+b1e3d000-b1e40000 ---p 00000000 00:00 0 
+b1e40000-b1e8e000 rwxp 00000000 00:00 0 
+b1e8e000-b1eb2000 r-xp 00000000 08:05 588018     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype854.cooja (deleted)
+b1eb2000-b1eb3000 r-xp 00023000 08:05 588018     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype854.cooja (deleted)
+b1eb3000-b1eb4000 rwxp 00024000 08:05 588018     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype854.cooja (deleted)
+b1eb4000-b1ebb000 rwxp 00000000 00:00 0 
+b1ebb000-b1ebe000 ---p 00000000 00:00 0 
+b1ebe000-b1f0c000 rwxp 00000000 00:00 0 
+b1f0c000-b1f0f000 ---p 00000000 00:00 0 
+b1f0f000-b1f5d000 rwxp 00000000 00:00 0 
+b1f5d000-b1f60000 ---p 00000000 00:00 0 
+b1f60000-b1fae000 rwxp 00000000 00:00 0 
+b1fae000-b1fd2000 r-xp 00000000 08:05 588021     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype795.cooja (deleted)
+b1fd2000-b1fd3000 r-xp 00023000 08:05 588021     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype795.cooja (deleted)
+b1fd3000-b1fd4000 rwxp 00024000 08:05 588021     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype795.cooja (deleted)
+b1fd4000-b1fdb000 rwxp 00000000 00:00 0 
+b1fdb000-b1fff000 r-xp 00000000 08:05 588020     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype720.cooja (deleted)
+b1fff000-b2000000 r-xp 00023000 08:05 588020     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype720.cooja (deleted)
+b2000000-b2001000 rwxp 00024000 08:05 588020     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype720.cooja (deleted)
+b2001000-b2008000 rwxp 00000000 00:00 0 
+b2008000-b200b000 ---p 00000000 00:00 0 
+b200b000-b2059000 rwxp 00000000 00:00 0 
+b2059000-b205c000 ---p 00000000 00:00 0 
+b205c000-b20aa000 rwxp 00000000 00:00 0 
+b20aa000-b20ce000 r-xp 00000000 08:05 588016     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype103.cooja (deleted)
+b20ce000-b20cf000 r-xp 00023000 08:05 588016     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype103.cooja (deleted)
+b20cf000-b20d0000 rwxp 00024000 08:05 588016     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype103.cooja (deleted)
+b20d0000-b20d7000 rwxp 00000000 00:00 0 
+b20d7000-b20fb000 r-xp 00000000 08:05 588012     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype895.cooja (deleted)
+b20fb000-b20fc000 r-xp 00023000 08:05 588012     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype895.cooja (deleted)
+b20fc000-b20fd000 rwxp 00024000 08:05 588012     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype895.cooja (deleted)
+b20fd000-b2104000 rwxp 00000000 00:00 0 
+b2104000-b2107000 ---p 00000000 00:00 0 
+b2107000-b2155000 rwxp 00000000 00:00 0 
+b2155000-b2158000 ---p 00000000 00:00 0 
+b2158000-b21a6000 rwxp 00000000 00:00 0 
+b21a6000-b21ca000 r-xp 00000000 08:05 588008     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype273.cooja (deleted)
+b21ca000-b21cb000 r-xp 00023000 08:05 588008     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype273.cooja (deleted)
+b21cb000-b21cc000 rwxp 00024000 08:05 588008     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype273.cooja (deleted)
+b21cc000-b21d3000 rwxp 00000000 00:00 0 
+b21d3000-b21f7000 r-xp 00000000 08:05 588003     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype693.cooja (deleted)
+b21f7000-b21f8000 r-xp 00023000 08:05 588003     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype693.cooja (deleted)
+b21f8000-b21f9000 rwxp 00024000 08:05 588003     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype693.cooja (deleted)
+b21f9000-b2200000 rwxp 00000000 00:00 0 
+b2200000-b2300000 rwxp 00000000 00:00 0 
+b2305000-b2329000 r-xp 00000000 08:05 587999     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype763.cooja (deleted)
+b2329000-b232a000 r-xp 00023000 08:05 587999     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype763.cooja (deleted)
+b232a000-b232b000 rwxp 00024000 08:05 587999     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype763.cooja (deleted)
+b232b000-b2332000 rwxp 00000000 00:00 0 
+b2332000-b2335000 ---p 00000000 00:00 0 
+b2335000-b2383000 rwxp 00000000 00:00 0 
+b2383000-b23a8000 r-xp 00000000 08:05 587993     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype976.cooja (deleted)
+b23a8000-b23a9000 rwxp 00025000 08:05 587993     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype976.cooja (deleted)
+b23a9000-b23b0000 rwxp 00000000 00:00 0 
+b23b0000-b23b3000 ---p 00000000 00:00 0 
+b23b3000-b2401000 rwxp 00000000 00:00 0 
+b2401000-b2404000 ---p 00000000 00:00 0 
+b2404000-b2452000 rwxp 00000000 00:00 0 
+b2452000-b2476000 r-xp 00000000 08:05 587989     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype742.cooja (deleted)
+b2476000-b2477000 r-xp 00023000 08:05 587989     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype742.cooja (deleted)
+b2477000-b2478000 rwxp 00024000 08:05 587989     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype742.cooja (deleted)
+b2478000-b247f000 rwxp 00000000 00:00 0 
+b247f000-b2482000 ---p 00000000 00:00 0 
+b2482000-b24d0000 rwxp 00000000 00:00 0 
+b24d0000-b24d3000 ---p 00000000 00:00 0 
+b24d3000-b2521000 rwxp 00000000 00:00 0 
+b2521000-b2524000 ---p 00000000 00:00 0 
+b2524000-b2572000 rwxp 00000000 00:00 0 
+b2572000-b2596000 r-xp 00000000 08:05 587983     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype552.cooja (deleted)
+b2596000-b2597000 r-xp 00023000 08:05 587983     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype552.cooja (deleted)
+b2597000-b2598000 rwxp 00024000 08:05 587983     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype552.cooja (deleted)
+b2598000-b259f000 rwxp 00000000 00:00 0 
+b259f000-b25c4000 r-xp 00000000 08:05 587985     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype752.cooja (deleted)
+b25c4000-b25c5000 rwxp 00025000 08:05 587985     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype752.cooja (deleted)
+b25c5000-b25cc000 rwxp 00000000 00:00 0 
+b25cc000-b25f0000 r-xp 00000000 08:05 587981     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype651.cooja (deleted)
+b25f0000-b25f1000 r-xp 00023000 08:05 587981     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype651.cooja (deleted)
+b25f1000-b25f2000 rwxp 00024000 08:05 587981     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype651.cooja (deleted)
+b25f2000-b25f9000 rwxp 00000000 00:00 0 
+b25f9000-b261e000 r-xp 00000000 08:05 587977     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype547.cooja (deleted)
+b261e000-b261f000 rwxp 00025000 08:05 587977     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype547.cooja (deleted)
+b261f000-b2626000 rwxp 00000000 00:00 0 
+b2626000-b264a000 r-xp 00000000 08:05 587973     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype668.cooja (deleted)
+b264a000-b264b000 r-xp 00023000 08:05 587973     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype668.cooja (deleted)
+b264b000-b264c000 rwxp 00024000 08:05 587973     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype668.cooja (deleted)
+b264c000-b2653000 rwxp 00000000 00:00 0 
+b2653000-b2656000 ---p 00000000 00:00 0 
+b2656000-b26a4000 rwxp 00000000 00:00 0 
+b26a4000-b26a7000 ---p 00000000 00:00 0 
+b26a7000-b26f5000 rwxp 00000000 00:00 0 
+b26f5000-b26f8000 ---p 00000000 00:00 0 
+b26f8000-b2746000 rwxp 00000000 00:00 0 
+b2746000-b2749000 ---p 00000000 00:00 0 
+b2749000-b2797000 rwxp 00000000 00:00 0 
+b2797000-b279a000 ---p 00000000 00:00 0 
+b279a000-b27e8000 rwxp 00000000 00:00 0 
+b27e8000-b280d000 r-xp 00000000 08:05 587967     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype530.cooja (deleted)
+b280d000-b280e000 rwxp 00025000 08:05 587967     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype530.cooja (deleted)
+b280e000-b2815000 rwxp 00000000 00:00 0 
+b2815000-b2818000 ---p 00000000 00:00 0 
+b2818000-b2866000 rwxp 00000000 00:00 0 
+b2866000-b2869000 ---p 00000000 00:00 0 
+b2869000-b28b7000 rwxp 00000000 00:00 0 
+b28b7000-b28db000 r-xp 00000000 08:05 587969     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype74.cooja (deleted)
+b28db000-b28dc000 r-xp 00023000 08:05 587969     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype74.cooja (deleted)
+b28dc000-b28dd000 rwxp 00024000 08:05 587969     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype74.cooja (deleted)
+b28dd000-b28e4000 rwxp 00000000 00:00 0 
+b28e4000-b2909000 r-xp 00000000 08:05 587965     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype776.cooja (deleted)
+b2909000-b290a000 rwxp 00025000 08:05 587965     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype776.cooja (deleted)
+b290a000-b2911000 rwxp 00000000 00:00 0 
+b2911000-b2914000 ---p 00000000 00:00 0 
+b2914000-b2962000 rwxp 00000000 00:00 0 
+b2962000-b2986000 r-xp 00000000 08:05 587961     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype330.cooja (deleted)
+b2986000-b2987000 r-xp 00023000 08:05 587961     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype330.cooja (deleted)
+b2987000-b2988000 rwxp 00024000 08:05 587961     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype330.cooja (deleted)
+b2988000-b298f000 rwxp 00000000 00:00 0 
+b298f000-b29b4000 r-xp 00000000 08:05 587957     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype24.cooja (deleted)
+b29b4000-b29b5000 rwxp 00025000 08:05 587957     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype24.cooja (deleted)
+b29b5000-b29bc000 rwxp 00000000 00:00 0 
+b29bc000-b29bf000 ---p 00000000 00:00 0 
+b29bf000-b2a0d000 rwxp 00000000 00:00 0 
+b2a0d000-b2a10000 ---p 00000000 00:00 0 
+b2a10000-b2a5e000 rwxp 00000000 00:00 0 
+b2a5e000-b2a82000 r-xp 00000000 08:05 587953     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype513.cooja (deleted)
+b2a82000-b2a83000 r-xp 00023000 08:05 587953     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype513.cooja (deleted)
+b2a83000-b2a84000 rwxp 00024000 08:05 587953     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype513.cooja (deleted)
+b2a84000-b2a8b000 rwxp 00000000 00:00 0 
+b2a8b000-b2a8e000 ---p 00000000 00:00 0 
+b2a8e000-b2adc000 rwxp 00000000 00:00 0 
+b2adc000-b2adf000 ---p 00000000 00:00 0 
+b2adf000-b2b2d000 rwxp 00000000 00:00 0 
+b2b2d000-b2b51000 r-xp 00000000 08:05 587947     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype7.cooja (deleted)
+b2b51000-b2b52000 r-xp 00023000 08:05 587947     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype7.cooja (deleted)
+b2b52000-b2b53000 rwxp 00024000 08:05 587947     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype7.cooja (deleted)
+b2b53000-b2b5a000 rwxp 00000000 00:00 0 
+b2b5a000-b2b7f000 r-xp 00000000 08:05 587949     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype22.cooja (deleted)
+b2b7f000-b2b80000 rwxp 00025000 08:05 587949     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype22.cooja (deleted)
+b2b80000-b2b87000 rwxp 00000000 00:00 0 
+b2b87000-b2b8a000 ---p 00000000 00:00 0 
+b2b8a000-b2bd8000 rwxp 00000000 00:00 0 
+b2bd8000-b2bfc000 r-xp 00000000 08:05 587945     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype882.cooja (deleted)
+b2bfc000-b2bfd000 r-xp 00023000 08:05 587945     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype882.cooja (deleted)
+b2bfd000-b2bfe000 rwxp 00024000 08:05 587945     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype882.cooja (deleted)
+b2bfe000-b2c05000 rwxp 00000000 00:00 0 
+b2c05000-b2c29000 r-xp 00000000 08:05 587941     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype633.cooja (deleted)
+b2c29000-b2c2a000 r-xp 00023000 08:05 587941     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype633.cooja (deleted)
+b2c2a000-b2c2b000 rwxp 00024000 08:05 587941     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype633.cooja (deleted)
+b2c2b000-b2c32000 rwxp 00000000 00:00 0 
+b2c32000-b2c57000 r-xp 00000000 08:05 587940     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype104.cooja (deleted)
+b2c57000-b2c58000 rwxp 00025000 08:05 587940     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype104.cooja (deleted)
+b2c58000-b2c5f000 rwxp 00000000 00:00 0 
+b2c5f000-b2c62000 ---p 00000000 00:00 0 
+b2c62000-b2cb0000 rwxp 00000000 00:00 0 
+b2cb0000-b2cb3000 ---p 00000000 00:00 0 
+b2cb3000-b2d01000 rwxp 00000000 00:00 0 
+b2d01000-b2d25000 r-xp 00000000 08:05 587936     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype593.cooja (deleted)
+b2d25000-b2d26000 r-xp 00023000 08:05 587936     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype593.cooja (deleted)
+b2d26000-b2d27000 rwxp 00024000 08:05 587936     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype593.cooja (deleted)
+b2d27000-b2d2e000 rwxp 00000000 00:00 0 
+b2d2e000-b2d31000 ---p 00000000 00:00 0 
+b2d31000-b2d7f000 rwxp 00000000 00:00 0 
+b2d7f000-b2d82000 ---p 00000000 00:00 0 
+b2d82000-b2dd0000 rwxp 00000000 00:00 0 
+b2dd0000-b2dd3000 ---p 00000000 00:00 0 
+b2dd3000-b2e21000 rwxp 00000000 00:00 0 
+b2e21000-b2e46000 r-xp 00000000 08:05 587930     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype966.cooja (deleted)
+b2e46000-b2e47000 rwxp 00025000 08:05 587930     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype966.cooja (deleted)
+b2e47000-b2e4e000 rwxp 00000000 00:00 0 
+b2e4e000-b2e51000 ---p 00000000 00:00 0 
+b2e51000-b2e9f000 rwxp 00000000 00:00 0 
+b2e9f000-b2ea2000 ---p 00000000 00:00 0 
+b2ea2000-b2ef0000 rwxp 00000000 00:00 0 
+b2ef0000-b2f14000 r-xp 00000000 08:05 587932     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype420.cooja (deleted)
+b2f14000-b2f15000 r-xp 00023000 08:05 587932     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype420.cooja (deleted)
+b2f15000-b2f16000 rwxp 00024000 08:05 587932     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype420.cooja (deleted)
+b2f16000-b2f1d000 rwxp 00000000 00:00 0 
+b2f1d000-b2f20000 ---p 00000000 00:00 0 
+b2f20000-b2f6e000 rwxp 00000000 00:00 0 
+b2f6e000-b2f71000 ---p 00000000 00:00 0 
+b2f71000-b2fbf000 rwxp 00000000 00:00 0 
+b2fbf000-b2fc2000 ---p 00000000 00:00 0 
+b2fc2000-b3010000 rwxp 00000000 00:00 0 
+b3010000-b3035000 r-xp 00000000 08:05 587926     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype483.cooja (deleted)
+b3035000-b3036000 rwxp 00025000 08:05 587926     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype483.cooja (deleted)
+b3036000-b303d000 rwxp 00000000 00:00 0 
+b303d000-b3040000 ---p 00000000 00:00 0 
+b3040000-b308e000 rwxp 00000000 00:00 0 
+b308e000-b3091000 ---p 00000000 00:00 0 
+b3091000-b30df000 rwxp 00000000 00:00 0 
+b30df000-b3103000 r-xp 00000000 08:05 587928     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype13.cooja (deleted)
+b3103000-b3104000 r-xp 00023000 08:05 587928     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype13.cooja (deleted)
+b3104000-b3105000 rwxp 00024000 08:05 587928     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype13.cooja (deleted)
+b3105000-b310c000 rwxp 00000000 00:00 0 
+b310c000-b3131000 r-xp 00000000 08:05 587924     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype775.cooja (deleted)
+b3131000-b3132000 rwxp 00025000 08:05 587924     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype775.cooja (deleted)
+b3132000-b3139000 rwxp 00000000 00:00 0 
+b3139000-b313c000 ---p 00000000 00:00 0 
+b313c000-b318a000 rwxp 00000000 00:00 0 
+b318a000-b318d000 ---p 00000000 00:00 0 
+b318d000-b31db000 rwxp 00000000 00:00 0 
+b31db000-b31ff000 r-xp 00000000 08:05 587920     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype676.cooja (deleted)
+b31ff000-b3200000 r-xp 00023000 08:05 587920     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype676.cooja (deleted)
+b3200000-b3201000 rwxp 00024000 08:05 587920     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype676.cooja (deleted)
+b3201000-b3208000 rwxp 00000000 00:00 0 
+b3208000-b322d000 r-xp 00000000 08:05 587916     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype639.cooja (deleted)
+b322d000-b322e000 rwxp 00025000 08:05 587916     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype639.cooja (deleted)
+b322e000-b3235000 rwxp 00000000 00:00 0 
+b3235000-b3238000 ---p 00000000 00:00 0 
+b3238000-b3286000 rwxp 00000000 00:00 0 
+b3286000-b3289000 ---p 00000000 00:00 0 
+b3289000-b32d7000 rwxp 00000000 00:00 0 
+b32d7000-b32fb000 r-xp 00000000 08:05 587912     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype836.cooja (deleted)
+b32fb000-b32fc000 r-xp 00023000 08:05 587912     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype836.cooja (deleted)
+b32fc000-b32fd000 rwxp 00024000 08:05 587912     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype836.cooja (deleted)
+b32fd000-b3304000 rwxp 00000000 00:00 0 
+b3304000-b3329000 r-xp 00000000 08:05 587908     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype174.cooja (deleted)
+b3329000-b332a000 rwxp 00025000 08:05 587908     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype174.cooja (deleted)
+b332a000-b3331000 rwxp 00000000 00:00 0 
+b3331000-b3334000 ---p 00000000 00:00 0 
+b3334000-b3382000 rwxp 00000000 00:00 0 
+b3382000-b3385000 ---p 00000000 00:00 0 
+b3385000-b33d3000 rwxp 00000000 00:00 0 
+b33d3000-b33f7000 r-xp 00000000 08:05 587904     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype53.cooja (deleted)
+b33f7000-b33f8000 r-xp 00023000 08:05 587904     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype53.cooja (deleted)
+b33f8000-b33f9000 rwxp 00024000 08:05 587904     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype53.cooja (deleted)
+b33f9000-b3400000 rwxp 00000000 00:00 0 
+b3400000-b34a3000 rwxp 00000000 00:00 0 
+b34a3000-b3500000 ---p 00000000 00:00 0 
+b3504000-b3528000 r-xp 00000000 08:05 587898     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype952.cooja (deleted)
+b3528000-b3529000 r-xp 00023000 08:05 587898     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype952.cooja (deleted)
+b3529000-b352a000 rwxp 00024000 08:05 587898     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype952.cooja (deleted)
+b352a000-b3531000 rwxp 00000000 00:00 0 
+b3531000-b3534000 ---p 00000000 00:00 0 
+b3534000-b3582000 rwxp 00000000 00:00 0 
+b3582000-b3585000 ---p 00000000 00:00 0 
+b3585000-b35d3000 rwxp 00000000 00:00 0 
+b35d3000-b35f7000 r-xp 00000000 08:05 587894     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype252.cooja (deleted)
+b35f7000-b35f8000 r-xp 00023000 08:05 587894     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype252.cooja (deleted)
+b35f8000-b35f9000 rwxp 00024000 08:05 587894     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype252.cooja (deleted)
+b35f9000-b3600000 rwxp 00000000 00:00 0 
+b3600000-b3700000 rwxp 00000000 00:00 0 
+b3727000-b373c000 r-xp 00000000 08:02 241976     /usr/lib/jvm/java-6-sun-1.6.0.26/jre/lib/i386/libdcpr.so
+b373c000-b374f000 rwxp 00014000 08:02 241976     /usr/lib/jvm/java-6-sun-1.6.0.26/jre/lib/i386/libdcpr.so
+b374f000-b3773000 r-xp 00000000 08:05 587890     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype898.cooja (deleted)
+b3773000-b3774000 r-xp 00023000 08:05 587890     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype898.cooja (deleted)
+b3774000-b3775000 rwxp 00024000 08:05 587890     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype898.cooja (deleted)
+b3775000-b377c000 rwxp 00000000 00:00 0 
+b377c000-b377f000 ---p 00000000 00:00 0 
+b377f000-b37cd000 rwxp 00000000 00:00 0 
+b37cd000-b37d0000 ---p 00000000 00:00 0 
+b37d0000-b381e000 rwxp 00000000 00:00 0 
+b381e000-b3842000 r-xp 00000000 08:05 587884     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype777.cooja (deleted)
+b3842000-b3843000 r-xp 00023000 08:05 587884     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype777.cooja (deleted)
+b3843000-b3844000 rwxp 00024000 08:05 587884     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype777.cooja (deleted)
+b3844000-b384b000 rwxp 00000000 00:00 0 
+b384b000-b384e000 ---p 00000000 00:00 0 
+b384e000-b389c000 rwxp 00000000 00:00 0 
+b389c000-b389f000 ---p 00000000 00:00 0 
+b389f000-b38ed000 rwxp 00000000 00:00 0 
+b38ed000-b38f0000 ---p 00000000 00:00 0 
+b38f0000-b393e000 rwxp 00000000 00:00 0 
+b393e000-b3941000 ---p 00000000 00:00 0 
+b3941000-b398f000 rwxp 00000000 00:00 0 
+b398f000-b3e49000 rwxs 00000000 00:04 1048589    /SYSV00000000 (deleted)
+b3e49000-b3e5d000 r-xp 00000000 08:02 241963     /usr/lib/jvm/java-6-sun-1.6.0.26/jre/lib/i386/libnet.so
+b3e5d000-b3e5e000 rwxp 00013000 08:02 241963     /usr/lib/jvm/java-6-sun-1.6.0.26/jre/lib/i386/libnet.so
+b3e5e000-b3e61000 ---p 00000000 00:00 0 
+b3e61000-b3eaf000 rwxp 00000000 00:00 0 
+b3eaf000-b3eb2000 ---p 00000000 00:00 0 
+b3eb2000-b3f00000 rwxp 00000000 00:00 0 
+b3f00000-b4000000 rwxp 00000000 00:00 0 
+b400a000-b4044000 r-xs 001e1000 08:05 579634     /home/manu/Documents/sources/contiki/tools/cooja/apps/avrora/lib/avrora-small.jar
+b4044000-b4047000 ---p 00000000 00:00 0 
+b4047000-b4095000 rwxp 00000000 00:00 0 
+b4095000-b4096000 r-xs 00000000 08:02 15264      /var/cache/fontconfig/c05880de57d1f5e948fdfacc138775d9-le32d4.cache-3
+b4096000-b409c000 r-xs 00000000 08:02 15238      /var/cache/fontconfig/945677eb7aeaf62f1d50efc3fb3ec7d8-le32d4.cache-3
+b409c000-b409f000 r-xs 00000000 08:02 15230      /var/cache/fontconfig/99e8ed0e538f840c565b6ed5dad60d56-le32d4.cache-3
+b409f000-b40a1000 r-xs 00000000 08:02 15080      /var/cache/fontconfig/f24b2111ab8703b4e963115a8cf14259-le32d4.cache-3
+b40a1000-b40a4000 r-xs 00000000 08:02 15079      /var/cache/fontconfig/e383d7ea5fbe662a33d9b44caf393297-le32d4.cache-3
+b40a4000-b40a5000 r-xs 00000000 08:02 14751      /var/cache/fontconfig/e7071f4a29fa870f4323321c154eba04-le32d4.cache-3
+b40a5000-b40a9000 r-xs 00000000 08:02 342749     /var/cache/fontconfig/926e794c3d5e5dffcaf2fa83ef8d36c2-le32d4.cache-3
+b40a9000-b40ac000 r-xs 00000000 08:02 1661       /var/cache/fontconfig/6eb3985aa4124903f6ff08ba781cd364-le32d4.cache-3
+b40ac000-b40ad000 r-xs 00000000 08:02 1660       /var/cache/fontconfig/4c73fe0c47614734b17d736dbde7580a-le32d4.cache-3
+b40ad000-b40ae000 r-xs 00000000 08:02 1554       /var/cache/fontconfig/0d8c3b2ac0904cb8a57a757ad11a4a08-le32d4.cache-3
+b40ae000-b40af000 r-xs 00000000 08:02 1499       /var/cache/fontconfig/6a53c69dea097a2d716e069445527da8-le32d4.cache-3
+b40af000-b40b3000 r-xs 00000000 08:02 1498       /var/cache/fontconfig/062808c12e6e608270f93bb230aed730-le32d4.cache-3
+b40b3000-b40b7000 r-xs 00000000 08:02 1497       /var/cache/fontconfig/a755afe4a08bf5b97852ceb7400b47bc-le32d4.cache-3
+b40b7000-b40be000 r-xs 00000000 08:02 1481       /var/cache/fontconfig/6d41288fd70b0be22e8c3a91e032eec0-le32d4.cache-3
+b40be000-b40c9000 r-xs 00000000 08:02 46600      /var/cache/fontconfig/0f34bcd4b6ee430af32735b75db7f02b-le32d4.cache-3
+b40c9000-b40cc000 r-xs 00000000 08:02 1332       /var/cache/fontconfig/d60319d88cac85ba9e1a07bd06cfbb8c-le32d4.cache-3
+b40cc000-b40cd000 r-xs 00000000 08:02 103569     /var/cache/fontconfig/4794a0821666d79190d59a36cb4f44b5-le32d4.cache-3
+b40cd000-b40ef000 r-xs 00000000 08:02 1295       /var/cache/fontconfig/365b55f210c0a22e9a19e35191240f32-le32d4.cache-3
+b40ef000-b40f1000 r-xs 00000000 08:02 1287       /var/cache/fontconfig/2c5ba8142dffc8bf0377700342b8ca1a-le32d4.cache-3
+b40f1000-b40f9000 r-xs 00000000 08:02 1265       /var/cache/fontconfig/d52a8644073d54c13679302ca1180695-le32d4.cache-3
+b40f9000-b4107000 r-xs 00000000 08:02 310311     /var/cache/fontconfig/e13b20fdb08344e0e664864cc2ede53d-le32d4.cache-3
+b4110000-b4117000 r-xp 00000000 08:02 241964     /usr/lib/jvm/java-6-sun-1.6.0.26/jre/lib/i386/libnio.so
+b4117000-b4118000 rwxp 00006000 08:02 241964     /usr/lib/jvm/java-6-sun-1.6.0.26/jre/lib/i386/libnio.so
+b4118000-b411a000 r-xs 00007000 08:05 581220     /home/manu/Documents/sources/contiki/tools/cooja/apps/avrora/lib/cooja_avrora.jar
+b411a000-b411c000 r-xs 00010000 08:05 581041     /home/manu/Documents/sources/contiki/tools/cooja/apps/mspsim/lib/jipv6.jar
+b411c000-b411f000 ---p 00000000 00:00 0 
+b411f000-b416d000 rwxp 00000000 00:00 0 
+b416d000-b4170000 ---p 00000000 00:00 0 
+b4170000-b41be000 rwxp 00000000 00:00 0 
+b41be000-b41c6000 r-xp 00000000 08:02 7389       /usr/lib/libXrender.so.1.3.0
+b41c6000-b41c7000 r-xp 00007000 08:02 7389       /usr/lib/libXrender.so.1.3.0
+b41c7000-b41c8000 rwxp 00008000 08:02 7389       /usr/lib/libXrender.so.1.3.0
+b41c8000-b41d0000 r-xp 00000000 08:02 124118     /usr/lib/libXcursor.so.1.0.2
+b41d0000-b41d1000 r-xp 00007000 08:02 124118     /usr/lib/libXcursor.so.1.0.2
+b41d1000-b41d2000 rwxp 00008000 08:02 124118     /usr/lib/libXcursor.so.1.0.2
+b41d2000-b41d3000 r-xs 00002000 08:05 581244     /home/manu/Documents/sources/contiki/tools/cooja/apps/collect-view/cooja-collect-view.jar
+b41d3000-b41d4000 r-xs 00003000 08:05 186441     /home/manu/Documents/sources/contiki/tools/cooja/apps/mspsim/lib/coffee.jar
+b41d4000-b41dd000 r-xs 0008e000 08:05 581040     /home/manu/Documents/sources/contiki/tools/cooja/apps/mspsim/lib/mspsim.jar
+b41dd000-b41e1000 r-xs 0002a000 08:05 581193     /home/manu/Documents/sources/contiki/tools/cooja/apps/mspsim/lib/cooja_mspsim.jar
+b41e1000-b41e9000 r-xs 00115000 08:02 242018     /usr/lib/jvm/java-6-sun-1.6.0.26/jre/lib/resources.jar
+b41e9000-b41ec000 ---p 00000000 00:00 0 
+b41ec000-b423a000 rwxp 00000000 00:00 0 
+b423a000-b42b3000 r-xp 00000000 08:02 241988     /usr/lib/jvm/java-6-sun-1.6.0.26/jre/lib/i386/libfontmanager.so
+b42b3000-b42bd000 rwxp 00078000 08:02 241988     /usr/lib/jvm/java-6-sun-1.6.0.26/jre/lib/i386/libfontmanager.so
+b42bd000-b42c2000 rwxp 00000000 00:00 0 
+b42c2000-b42c6000 r-xp 00000000 08:02 43742      /usr/lib/libXdmcp.so.6.0.0
+b42c6000-b42c7000 r-xp 00003000 08:02 43742      /usr/lib/libXdmcp.so.6.0.0
+b42c7000-b42c8000 rwxp 00004000 08:02 43742      /usr/lib/libXdmcp.so.6.0.0
+b42c8000-b42ca000 r-xp 00000000 08:02 38105      /usr/lib/libXau.so.6.0.0
+b42ca000-b42cb000 r-xp 00001000 08:02 38105      /usr/lib/libXau.so.6.0.0
+b42cb000-b42cc000 rwxp 00002000 08:02 38105      /usr/lib/libXau.so.6.0.0
+b42cc000-b42e4000 r-xp 00000000 08:02 89888      /usr/lib/libxcb.so.1.1.0
+b42e4000-b42e5000 r-xp 00017000 08:02 89888      /usr/lib/libxcb.so.1.1.0
+b42e5000-b42e6000 rwxp 00018000 08:02 89888      /usr/lib/libxcb.so.1.1.0
+b42e6000-b42f2000 r-xp 00000000 08:02 28336      /usr/lib/libXi.so.6.1.0
+b42f2000-b42f3000 r-xp 0000c000 08:02 28336      /usr/lib/libXi.so.6.1.0
+b42f3000-b42f4000 rwxp 0000d000 08:02 28336      /usr/lib/libXi.so.6.1.0
+b42f4000-b42f8000 r-xp 00000000 08:02 28351      /usr/lib/libXtst.so.6.1.0
+b42f8000-b42f9000 r-xp 00003000 08:02 28351      /usr/lib/libXtst.so.6.1.0
+b42f9000-b42fa000 rwxp 00004000 08:02 28351      /usr/lib/libXtst.so.6.1.0
+b42fa000-b4413000 r-xp 00000000 08:02 28304      /usr/lib/libX11.so.6.3.0
+b4413000-b4414000 r-xp 00118000 08:02 28304      /usr/lib/libX11.so.6.3.0
+b4414000-b4416000 rwxp 00119000 08:02 28304      /usr/lib/libX11.so.6.3.0
+b4416000-b4417000 rwxp 00000000 00:00 0 
+b4417000-b4425000 r-xp 00000000 08:02 28320      /usr/lib/libXext.so.6.4.0
+b4425000-b4426000 r-xp 0000d000 08:02 28320      /usr/lib/libXext.so.6.4.0
+b4426000-b4427000 rwxp 0000e000 08:02 28320      /usr/lib/libXext.so.6.4.0
+b4427000-b442b000 r-xp 00000000 08:02 18946      /usr/lib/libXfixes.so.3.1.0
+b442b000-b442c000 r-xp 00003000 08:02 18946      /usr/lib/libXfixes.so.3.1.0
+b442c000-b442d000 rwxp 00004000 08:02 18946      /usr/lib/libXfixes.so.3.1.0
+b442d000-b4430000 r-xs 00000000 08:02 1235       /var/cache/fontconfig/7ef2298fde41cc6eeb7af42e48b7d293-le32d4.cache-3
+b4430000-b443e000 r-xs 00000000 08:02 310345     /var/cache/fontconfig/865f88548240fee46819705c6468c165-le32d4.cache-3
+b443e000-b4481000 r-xp 00000000 08:02 241982     /usr/lib/jvm/java-6-sun-1.6.0.26/jre/lib/i386/xawt/libmawt.so
+b4481000-b4483000 rwxp 00043000 08:02 241982     /usr/lib/jvm/java-6-sun-1.6.0.26/jre/lib/i386/xawt/libmawt.so
+b4483000-b4484000 rwxp 00000000 00:00 0 
+b4484000-b4509000 r-xp 00000000 08:02 241978     /usr/lib/jvm/java-6-sun-1.6.0.26/jre/lib/i386/libawt.so
+b4509000-b4510000 rwxp 00085000 08:02 241978     /usr/lib/jvm/java-6-sun-1.6.0.26/jre/lib/i386/libawt.so
+b4510000-b4534000 rwxp 00000000 00:00 0 
+b4534000-b453b000 r-xs 0004f000 08:05 580032     /home/manu/Documents/sources/contiki/tools/cooja/lib/log4j.jar
+b453b000-b453e000 r-xs 00022000 08:05 580031     /home/manu/Documents/sources/contiki/tools/cooja/lib/jdom.jar
+b453e000-b453f000 ---p 00000000 00:00 0 
+b453f000-b45bf000 rwxp 00000000 00:00 0 
+b45bf000-b45c2000 ---p 00000000 00:00 0 
+b45c2000-b4610000 rwxp 00000000 00:00 0 
+b4610000-b4613000 ---p 00000000 00:00 0 
+b4613000-b4691000 rwxp 00000000 00:00 0 
+b4691000-b4694000 ---p 00000000 00:00 0 
+b4694000-b46e2000 rwxp 00000000 00:00 0 
+b46e2000-b46e9000 r-xs 00000000 08:02 88550      /usr/lib/gconv/gconv-modules.cache
+b46e9000-b4728000 r-xp 00000000 08:02 51679      /usr/lib/locale/fr_FR.utf8/LC_CTYPE
+b4728000-b472b000 ---p 00000000 00:00 0 
+b472b000-b4779000 rwxp 00000000 00:00 0 
+b4779000-b477c000 ---p 00000000 00:00 0 
+b477c000-b47fe000 rwxp 00000000 00:00 0 
+b47fe000-b4996000 r-xs 03029000 08:02 242205     /usr/lib/jvm/java-6-sun-1.6.0.26/jre/lib/rt.jar
+b4996000-b4997000 ---p 00000000 00:00 0 
+b4997000-b4a1e000 rwxp 00000000 00:00 0 
+b4a1e000-b4a38000 rwxp 00000000 00:00 0 
+b4a38000-b4a4a000 rwxp 00000000 00:00 0 
+b4a4a000-b4a8e000 ---p 00000000 00:00 0 
+b4a8e000-b4ae3000 rwxp 00000000 00:00 0 
+b4ae3000-b4aec000 rwxp 00000000 00:00 0 
+b4aec000-b4b0e000 ---p 00000000 00:00 0 
+b4b0e000-b4b38000 rwxp 00000000 00:00 0 
+b4b38000-b4b4a000 rwxp 00000000 00:00 0 
+b4b4a000-b4b8e000 ---p 00000000 00:00 0 
+b4b8e000-b4be3000 rwxp 00000000 00:00 0 
+b4be3000-b4be9000 rwxp 00000000 00:00 0 
+b4be9000-b4c03000 rwxp 00000000 00:00 0 
+b4c03000-b4c24000 rwxp 00000000 00:00 0 
+b4c24000-b4c8f000 rwxp 00000000 00:00 0 
+b4c8f000-b51cf000 rwxp 00000000 00:00 0 
+b51cf000-b6c8f000 rwxp 00000000 00:00 0 
+b6c8f000-b6c9e000 r-xp 00000000 08:02 241959     /usr/lib/jvm/java-6-sun-1.6.0.26/jre/lib/i386/libzip.so
+b6c9e000-b6ca0000 rwxp 0000e000 08:02 241959     /usr/lib/jvm/java-6-sun-1.6.0.26/jre/lib/i386/libzip.so
+b6ca0000-b6caa000 r-xp 00000000 08:02 137071     /lib/tls/i686/cmov/libnss_files-2.11.1.so
+b6caa000-b6cab000 r-xp 00009000 08:02 137071     /lib/tls/i686/cmov/libnss_files-2.11.1.so
+b6cab000-b6cac000 rwxp 0000a000 08:02 137071     /lib/tls/i686/cmov/libnss_files-2.11.1.so
+b6cac000-b6cb4000 r-xp 00000000 08:02 158575     /lib/tls/i686/cmov/libnss_nis-2.11.1.so
+b6cb4000-b6cb5000 r-xp 00007000 08:02 158575     /lib/tls/i686/cmov/libnss_nis-2.11.1.so
+b6cb5000-b6cb6000 rwxp 00008000 08:02 158575     /lib/tls/i686/cmov/libnss_nis-2.11.1.so
+b6cb6000-b6cc9000 r-xp 00000000 08:02 135965     /lib/tls/i686/cmov/libnsl-2.11.1.so
+b6cc9000-b6cca000 r-xp 00012000 08:02 135965     /lib/tls/i686/cmov/libnsl-2.11.1.so
+b6cca000-b6ccb000 rwxp 00013000 08:02 135965     /lib/tls/i686/cmov/libnsl-2.11.1.so
+b6ccb000-b6ccd000 rwxp 00000000 00:00 0 
+b6ccd000-b6ccf000 r-xs 0001a000 08:05 581037     /home/manu/Documents/sources/contiki/tools/cooja/apps/mrm/lib/mrm.jar
+b6ccf000-b6cdc000 rwxp 00000000 00:00 0 
+b6cdc000-b6ce4000 rwxs 00000000 08:02 34766      /tmp/hsperfdata_manu/2108
+b6ce4000-b6d07000 r-xp 00000000 08:02 241955     /usr/lib/jvm/java-6-sun-1.6.0.26/jre/lib/i386/libjava.so
+b6d07000-b6d09000 rwxp 00023000 08:02 241955     /usr/lib/jvm/java-6-sun-1.6.0.26/jre/lib/i386/libjava.so
+b6d09000-b6d10000 r-xp 00000000 08:02 158593     /lib/tls/i686/cmov/librt-2.11.1.so
+b6d10000-b6d11000 r-xp 00006000 08:02 158593     /lib/tls/i686/cmov/librt-2.11.1.so
+b6d11000-b6d12000 rwxp 00007000 08:02 158593     /lib/tls/i686/cmov/librt-2.11.1.so
+b6d12000-b6d15000 ---p 00000000 00:00 0 
+b6d15000-b6d63000 rwxp 00000000 00:00 0 
+b6d63000-b6d87000 r-xp 00000000 08:02 127031     /lib/tls/i686/cmov/libm-2.11.1.so
+b6d87000-b6d88000 r-xp 00023000 08:02 127031     /lib/tls/i686/cmov/libm-2.11.1.so
+b6d88000-b6d89000 rwxp 00024000 08:02 127031     /lib/tls/i686/cmov/libm-2.11.1.so
+b6d89000-b726a000 r-xp 00000000 08:02 241946     /usr/lib/jvm/java-6-sun-1.6.0.26/jre/lib/i386/client/libjvm.so
+b726a000-b728d000 rwxp 004e1000 08:02 241946     /usr/lib/jvm/java-6-sun-1.6.0.26/jre/lib/i386/client/libjvm.so
+b728d000-b76aa000 rwxp 00000000 00:00 0 
+b76aa000-b77fd000 r-xp 00000000 08:02 96547      /lib/tls/i686/cmov/libc-2.11.1.so
+b77fd000-b77fe000 ---p 00153000 08:02 96547      /lib/tls/i686/cmov/libc-2.11.1.so
+b77fe000-b7800000 r-xp 00153000 08:02 96547      /lib/tls/i686/cmov/libc-2.11.1.so
+b7800000-b7801000 rwxp 00155000 08:02 96547      /lib/tls/i686/cmov/libc-2.11.1.so
+b7801000-b7804000 rwxp 00000000 00:00 0 
+b7804000-b7806000 r-xp 00000000 08:02 127010     /lib/tls/i686/cmov/libdl-2.11.1.so
+b7806000-b7807000 r-xp 00001000 08:02 127010     /lib/tls/i686/cmov/libdl-2.11.1.so
+b7807000-b7808000 rwxp 00002000 08:02 127010     /lib/tls/i686/cmov/libdl-2.11.1.so
+b7808000-b780f000 r-xp 00000000 08:02 241958     /usr/lib/jvm/java-6-sun-1.6.0.26/jre/lib/i386/jli/libjli.so
+b780f000-b7811000 rwxp 00006000 08:02 241958     /usr/lib/jvm/java-6-sun-1.6.0.26/jre/lib/i386/jli/libjli.so
+b7811000-b7812000 rwxp 00000000 00:00 0 
+b7812000-b7827000 r-xp 00000000 08:02 158590     /lib/tls/i686/cmov/libpthread-2.11.1.so
+b7827000-b7828000 r-xp 00014000 08:02 158590     /lib/tls/i686/cmov/libpthread-2.11.1.so
+b7828000-b7829000 rwxp 00015000 08:02 158590     /lib/tls/i686/cmov/libpthread-2.11.1.so
+b7829000-b782b000 rwxp 00000000 00:00 0 
+b782b000-b782c000 r-xs 00003000 08:05 581232     /home/manu/Documents/sources/contiki/tools/cooja/apps/serial_socket/lib/serial_socket.jar
+b782c000-b7832000 r-xp 00000000 08:02 136301     /lib/tls/i686/cmov/libnss_compat-2.11.1.so
+b7832000-b7833000 r-xp 00006000 08:02 136301     /lib/tls/i686/cmov/libnss_compat-2.11.1.so
+b7833000-b7834000 rwxp 00007000 08:02 136301     /lib/tls/i686/cmov/libnss_compat-2.11.1.so
+b7834000-b7835000 rwxp 00000000 00:00 0 
+b7835000-b7836000 r-xp 00000000 00:00 0 
+b7836000-b7841000 r-xp 00000000 08:02 241954     /usr/lib/jvm/java-6-sun-1.6.0.26/jre/lib/i386/libverify.so
+b7841000-b7842000 rwxp 0000b000 08:02 241954     /usr/lib/jvm/java-6-sun-1.6.0.26/jre/lib/i386/libverify.so
+b7842000-b7844000 rwxp 00000000 00:00 0 
+b7844000-b7845000 r-xp 00000000 00:00 0          [vdso]
+b7845000-b7860000 r-xp 00000000 08:02 40758      /lib/ld-2.11.1.so
+b7860000-b7861000 r-xp 0001a000 08:02 40758      /lib/ld-2.11.1.so
+b7861000-b7862000 rwxp 0001b000 08:02 40758      /lib/ld-2.11.1.so
+bfc20000-bfc35000 rwxp 00000000 00:00 0          [stack]
+
+VM Arguments:
+jvm_args: -Xmx512m -Duser.language=en 
+java_command: se.sics.cooja.GUI
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+JAVA_HOME=/usr/lib/jvm/java-6-sun
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/opt/msp430-gcc-4.4.5/bin
+USERNAME=manu
+LD_LIBRARY_PATH=/usr/lib/jvm/java-6-sun-1.6.0.26/jre/lib/i386/client:/usr/lib/jvm/java-6-sun-1.6.0.26/jre/lib/i386:/usr/lib/jvm/java-6-sun-1.6.0.26/jre/../lib/i386:.
+SHELL=/bin/bash
+DISPLAY=:0.0
+
+Signal Handlers:
+SIGSEGV: [libjvm.so+0x469ec0], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGBUS: [libjvm.so+0x469ec0], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGFPE: [libjvm.so+0x38bf10], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGPIPE: [libjvm.so+0x38bf10], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGXFSZ: [libjvm.so+0x38bf10], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGILL: [libjvm.so+0x38bf10], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGUSR1: SIG_DFL, sa_mask[0]=0x00000000, sa_flags=0x00000000
+SIGUSR2: [libjvm.so+0x38f150], sa_mask[0]=0x00000004, sa_flags=0x10000004
+SIGHUP: [libjvm.so+0x38ed30], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGINT: [libjvm.so+0x38ed30], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGTERM: [libjvm.so+0x38ed30], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGQUIT: [libjvm.so+0x38ed30], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+
+
+---------------  S Y S T E M  ---------------
+
+OS:squeeze/sid
+
+uname:Linux 2.6.32-34-generic #73-Ubuntu SMP Thu Aug 11 17:07:31 UTC 2011 i686
+libc:glibc 2.11.1 NPTL 2.11.1 
+rlimit: STACK 8192k, CORE 0k, NPROC infinity, NOFILE 1024, AS infinity
+load average:0.77 0.74 0.48
+
+/proc/meminfo:
+MemTotal:        2060120 kB
+MemFree:          698632 kB
+Buffers:          189680 kB
+Cached:           568508 kB
+SwapCached:            0 kB
+Active:           813108 kB
+Inactive:         378896 kB
+Active(anon):     435492 kB
+Inactive(anon):     9236 kB
+Active(file):     377616 kB
+Inactive(file):   369660 kB
+Unevictable:           0 kB
+Mlocked:               0 kB
+HighTotal:       1186352 kB
+HighFree:         163308 kB
+LowTotal:         873768 kB
+LowFree:          535324 kB
+SwapTotal:       2554292 kB
+SwapFree:        2554292 kB
+Dirty:              4572 kB
+Writeback:             0 kB
+AnonPages:        433940 kB
+Mapped:           128376 kB
+Shmem:             10912 kB
+Slab:              94252 kB
+SReclaimable:      82912 kB
+SUnreclaim:        11340 kB
+KernelStack:        3376 kB
+PageTables:         6044 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:     3584352 kB
+Committed_AS:    1152192 kB
+VmallocTotal:     122880 kB
+VmallocUsed:       62192 kB
+VmallocChunk:      46076 kB
+HardwareCorrupted:     0 kB
+HugePages_Total:       0
+HugePages_Free:        0
+HugePages_Rsvd:        0
+HugePages_Surp:        0
+Hugepagesize:       4096 kB
+DirectMap4k:       65528 kB
+DirectMap4M:      843776 kB
+
+
+CPU:total 2 (1 cores per cpu, 2 threads per core) family 15 model 4 stepping 3, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ht
+
+/proc/cpuinfo:
+processor	: 0
+vendor_id	: GenuineIntel
+cpu family	: 15
+model		: 4
+model name	: Intel(R) Pentium(R) 4 CPU 3.40GHz
+stepping	: 3
+cpu MHz		: 3391.602
+cache size	: 2048 KB
+physical id	: 0
+siblings	: 2
+core id		: 0
+cpu cores	: 1
+apicid		: 0
+initial apicid	: 0
+fdiv_bug	: no
+hlt_bug		: no
+f00f_bug	: no
+coma_bug	: no
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 5
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe nx lm constant_tsc pebs bts pni dtes64 monitor ds_cpl est cid cx16 xtpr
+bogomips	: 6783.20
+clflush size	: 64
+cache_alignment	: 128
+address sizes	: 36 bits physical, 48 bits virtual
+power management:
+
+processor	: 1
+vendor_id	: GenuineIntel
+cpu family	: 15
+model		: 4
+model name	: Intel(R) Pentium(R) 4 CPU 3.40GHz
+stepping	: 3
+cpu MHz		: 3391.602
+cache size	: 2048 KB
+physical id	: 0
+siblings	: 2
+core id		: 0
+cpu cores	: 1
+apicid		: 1
+initial apicid	: 1
+fdiv_bug	: no
+hlt_bug		: no
+f00f_bug	: no
+coma_bug	: no
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 5
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe nx lm constant_tsc pebs bts pni dtes64 monitor ds_cpl est cid cx16 xtpr
+bogomips	: 6783.12
+clflush size	: 64
+cache_alignment	: 128
+address sizes	: 36 bits physical, 48 bits virtual
+power management:
+
+
+
+Memory: 4k page, physical 2060120k(698508k free), swap 2554292k(2554292k free)
+
+vm_info: Java HotSpot(TM) Client VM (20.1-b02) for linux-x86 JRE (1.6.0_26-b03), built on May  4 2011 01:23:42 by "java_re" with gcc 3.2.1-7a (J2SE release)
+
+time: Thu Oct 13 17:08:56 2011
+elapsed time: 96180 seconds
+

@@ -1,0 +1,13 @@
+#!/bin/bash
+
+echo SUCCESS : `grep status < $1 | cut -f 3 | sed s/status// | grep 0 | wc -l`
+echo ERRORS : `grep status < $1 | cut -f 3 | sed s/status// | grep 1 | wc -l`
+echo COLLISION : `grep status < $1 | cut -f 3 | sed s/status// | grep 2 | wc -l`
+
+#for i in {1..25} 
+#do
+#	echo node $i :
+#	grep status < $1 | cut -f 2- | sort | sed s/ID:// |sed s/status// | grep "^$i\b" | grep 0$|wc -l
+#	grep status < $1 | cut -f 2- | sort | sed s/ID:// |sed s/status// | grep "^$i\b" | grep 1$|wc -l
+#	grep status < $1 | cut -f 2- | sort | sed s/ID:// |sed s/status// | grep "^$i\b" | grep 2$|wc -l
+#done

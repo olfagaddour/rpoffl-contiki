@@ -1,0 +1,8 @@
+[15:39:41 - main] [GUI.java:1191] [INFO] - > Starting COOJA
+[15:39:41 - main] [GUI.java:2660] [INFO] - External tools default settings: /external_tools_linux.config
+[15:39:41 - main] [GUI.java:2690] [INFO] - External tools user settings: /home/manu/.cooja.user.properties
+[15:39:41 - main] [GUI.java:1197] [INFO] - > Creating simulation
+[15:39:46 - AWT-EventQueue-0] [Simulation.java:409] [INFO] - Simulation random seed: 123456
+[15:39:46 - main] [GUI.java:1207] [INFO] - > Creating mote type
+[15:39:52 - AWT-EventQueue-0] [CompileContiki.java:131] [INFO] - > make udp-sink.cooja TARGET=cooja 
+[15:40:57 - main] [GUI.java:1215] [FATAL] - Mote type initialization failed, aborting quickstart

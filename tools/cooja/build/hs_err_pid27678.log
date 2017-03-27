@@ -1,0 +1,506 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  SIGSEGV (0xb) at pc=0xb35e1851, pid=27678, tid=3010972528
+#
+# JRE version: 6.0_26-b03
+# Java VM: Java HotSpot(TM) Client VM (20.1-b02 mixed mode, sharing linux-x86 )
+# Problematic frame:
+# C  [mtype577.cooja+0x13851]  double+0x3c5
+#
+# If you would like to submit a bug report, please visit:
+#   http://java.sun.com/webapps/bugreport/crash.jsp
+# The crash happened outside the Java Virtual Machine in native code.
+# See problematic frame for where to report the bug.
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0xb4522400):  JavaThread "Thread-6" [_thread_in_native, id=27809, stack(0xb372c000,0xb377d000)]
+
+siginfo:si_signo=SIGSEGV: si_errno=0, si_code=1 (SEGV_MAPERR), si_addr=0x00000004
+
+Registers:
+EAX=0x00000000, EBX=0x00000000, ECX=0x00000008, EDX=0x00000003
+ESP=0xb35f8e6c, EBP=0xb35f8f64, ESI=0x00000000, EDI=0x00000000
+EIP=0xb35e1851, EFLAGS=0x00010296, CR2=0x00000004
+
+Top of Stack: (sp=0xb35f8e6c)
+0xb35f8e6c:   b35f7104 b35fa0b0 0000002a 00000001
+0xb35f8e7c:   00000000 0000030c 00000000 b778a8f4
+0xb35f8e8c:   00000000 00000000 b7876ff4 b35f8ee8
+0xb35f8e9c:   b35f9010 b778bc22 00000000 b35f8ecc
+0xb35f8eac:   b7876ff4 ffffffff 00000000 00000036
+0xb35f8ebc:   000009d0 b35fe158 0000002c 00000018
+0xb35f8ecc:   b35fd9ec 74024efa 0000aaaa 00000000
+0xb35f8edc:   00000000 01000000 010003ff 00000200 
+
+Instructions: (pc=0xb35e1851)
+0xb35e1831:   e8 e8 4b 00 00 89 85 50 ff ff ff 8b 85 54 ff ff
+0xb35e1841:   ff 03 85 68 ff ff ff 0f b6 10 8b 85 50 ff ff ff
+0xb35e1851:   88 50 04 83 85 54 ff ff ff 01 8b 85 54 ff ff ff
+0xb35e1861:   03 85 68 ff ff ff 0f b6 00 8d 14 00 8b 85 50 ff 
+
+Register to memory mapping:
+
+EAX=0x00000000 is an unknown value
+EBX=0x00000000 is an unknown value
+ECX=0x00000008 is an unknown value
+EDX=0x00000003 is an unknown value
+ESP=0xb35f8e6c: <offset 0x2ae6c> in /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype577.cooja at 0xb35ce000
+EBP=0xb35f8f64: <offset 0x2af64> in /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype577.cooja at 0xb35ce000
+ESI=0x00000000 is an unknown value
+EDI=0x00000000 is an unknown value
+
+
+Stack: [0xb372c000,0xb377d000],  sp=0xb35f8e6c,  free space=4193075k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  [mtype577.cooja+0x13851]  double+0x3c5
+C  [mtype577.cooja+0x14df0]  uip_rpl_input+0x4f
+C  [mtype577.cooja+0x1b3d5]  uip_process+0xa16
+C  [mtype577.cooja+0x1d05c]  packet_input+0x23
+C  [mtype577.cooja+0x1d4cd]  long double+0x217
+C  [mtype577.cooja+0x1dad6]  process_thread_tcpip_process+0xbe
+C  [mtype577.cooja+0x17d73]  char+0x57
+C  [mtype577.cooja+0x180c5]  process_post_synch+0x2e
+C  [mtype577.cooja+0x1d501]  unsigned short+0x22
+C  [mtype577.cooja+0x21b31]  int+0x658
+C  [mtype577.cooja+0x10a36]  int+0xd
+C  [mtype577.cooja+0x11675]  int+0x1d1
+C  [mtype577.cooja+0x243cc]  process_thread_cooja_radio_process+0x7e
+C  [mtype577.cooja+0x17d73]  char+0x57
+C  [mtype577.cooja+0x17e46]  double+0x4b
+C  [mtype577.cooja+0x17fac]  process_run+0x16
+C  [mtype577.cooja+0xfeae]  process_run_thread_loop+0x1f
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  se.sics.cooja.corecomm.Lib2.tick()V+0
+j  se.sics.cooja.contikimote.ContikiMoteType.tick()V+4
+j  se.sics.cooja.contikimote.ContikiMote.execute(J)V+63
+j  se.sics.cooja.motes.AbstractWakeupMote$1.execute(J)V+5
+j  se.sics.cooja.Simulation.run()V+174
+j  java.lang.Thread.run()V+11
+v  ~StubRoutines::call_stub
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+=>0xb4522400 JavaThread "Thread-6" [_thread_in_native, id=27809, stack(0xb372c000,0xb377d000)]
+  0x08fb6400 JavaThread "Thread-4" [_thread_blocked, id=27795, stack(0xb3921000,0xb3972000)]
+  0x0907a400 JavaThread "Thread-2" [_thread_blocked, id=27740, stack(0xb39c3000,0xb3a14000)]
+  0xb45c1400 JavaThread "TimerQueue" daemon [_thread_blocked, id=27695, stack(0xb3f1c000,0xb3f6d000)]
+  0x08f98000 JavaThread "DestroyJavaVM" [_thread_blocked, id=27682, stack(0xb6d89000,0xb6dda000)]
+  0x09049400 JavaThread "AWT-EventQueue-0" [_thread_in_native, id=27693, stack(0xb3fbe000,0xb400f000)]
+  0x09048000 JavaThread "AWT-Shutdown" [_thread_blocked, id=27692, stack(0xb408c000,0xb40dd000)]
+  0x09044400 JavaThread "AWT-XAWT" daemon [_thread_in_native, id=27691, stack(0xb40dd000,0xb412e000)]
+  0x0900c800 JavaThread "Java2D Disposer" daemon [_thread_blocked, id=27690, stack(0xb415f000,0xb41b0000)]
+  0xb4500800 JavaThread "Low Memory Detector" daemon [_thread_blocked, id=27688, stack(0xb4636000,0xb4687000)]
+  0x08fd1400 JavaThread "C1 CompilerThread0" daemon [_thread_blocked, id=27687, stack(0xb4687000,0xb4708000)]
+  0x08fcf800 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=27686, stack(0xb4708000,0xb4759000)]
+  0x08fca800 JavaThread "Finalizer" daemon [_thread_blocked, id=27685, stack(0xb479f000,0xb47f0000)]
+  0x08fc6000 JavaThread "Reference Handler" daemon [_thread_blocked, id=27684, stack(0xb47f0000,0xb4841000)]
+
+Other Threads:
+  0x08fbb800 VMThread [stack: 0xb4a0d000,0xb4a8e000] [id=27683]
+  0xb4503800 WatcherThread [stack: 0xb447f000,0xb4500000] [id=27689]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap
+ def new generation   total 4992K, used 396K [0x6ed90000, 0x6f2f0000, 0x79830000)
+  eden space 4480K,   7% used [0x6ed90000, 0x6ede1818, 0x6f1f0000)
+  from space 512K,  13% used [0x6f1f0000, 0x6f2017e8, 0x6f270000)
+  to   space 512K,   0% used [0x6f270000, 0x6f270000, 0x6f2f0000)
+ tenured generation   total 10944K, used 7372K [0x79830000, 0x7a2e0000, 0x8ed90000)
+   the space 10944K,  67% used [0x79830000, 0x79f633c0, 0x79f63400, 0x7a2e0000)
+ compacting perm gen  total 12288K, used 5247K [0x8ed90000, 0x8f990000, 0x92d90000)
+   the space 12288K,  42% used [0x8ed90000, 0x8f2affc8, 0x8f2b0000, 0x8f990000)
+    ro space 10240K,  61% used [0x92d90000, 0x933b9d08, 0x933b9e00, 0x93790000)
+    rw space 12288K,  60% used [0x93790000, 0x93ecc660, 0x93ecc800, 0x94390000)
+
+Code Cache  [0xb4d06000, 0xb4ea6000, 0xb6d06000)
+ total_blobs=1072 nmethods=813 adapters=194 free_code_cache=31869440 largest_free_block=256
+
+Dynamic libraries:
+08048000-08052000 r-xp 00000000 08:02 241919     /usr/lib/jvm/java-6-sun-1.6.0.26/jre/bin/java
+08052000-08053000 rwxp 00009000 08:02 241919     /usr/lib/jvm/java-6-sun-1.6.0.26/jre/bin/java
+08f92000-090b1000 rwxp 00000000 00:00 0          [heap]
+6ed90000-6f2f0000 rwxp 00000000 00:00 0 
+6f2f0000-79830000 rwxp 00000000 00:00 0 
+79830000-7a2e0000 rwxp 00000000 00:00 0 
+7a2e0000-8ed90000 rwxp 00000000 00:00 0 
+8ed90000-8f990000 rwxp 00000000 00:00 0 
+8f990000-92d90000 rwxp 00000000 00:00 0 
+92d90000-933ba000 r-xs 00001000 08:02 128946     /usr/lib/jvm/java-6-sun-1.6.0.26/jre/lib/i386/client/classes.jsa
+933ba000-93790000 rwxp 00000000 00:00 0 
+93790000-93ecd000 rwxp 0062b000 08:02 128946     /usr/lib/jvm/java-6-sun-1.6.0.26/jre/lib/i386/client/classes.jsa
+93ecd000-94390000 rwxp 00000000 00:00 0 
+94390000-94472000 rwxp 00d68000 08:02 128946     /usr/lib/jvm/java-6-sun-1.6.0.26/jre/lib/i386/client/classes.jsa
+94472000-94790000 rwxp 00000000 00:00 0 
+94790000-94798000 r-xs 00e4a000 08:02 128946     /usr/lib/jvm/java-6-sun-1.6.0.26/jre/lib/i386/client/classes.jsa
+94798000-94b90000 rwxp 00000000 00:00 0 
+b35ce000-b35f6000 r-xp 00000000 08:05 585527     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype577.cooja
+b35f6000-b35f7000 r-xp 00027000 08:05 585527     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype577.cooja
+b35f7000-b35f8000 rwxp 00028000 08:05 585527     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype577.cooja
+b35f8000-b3600000 rwxp 00000000 00:00 0 
+b3600000-b3676000 rwxp 00000000 00:00 0 
+b3676000-b3700000 ---p 00000000 00:00 0 
+b3704000-b3719000 r-xp 00000000 08:02 241976     /usr/lib/jvm/java-6-sun-1.6.0.26/jre/lib/i386/libdcpr.so
+b3719000-b372c000 rwxp 00014000 08:02 241976     /usr/lib/jvm/java-6-sun-1.6.0.26/jre/lib/i386/libdcpr.so
+b372c000-b372f000 ---p 00000000 00:00 0 
+b372f000-b377d000 rwxp 00000000 00:00 0 
+b377d000-b3780000 ---p 00000000 00:00 0 
+b3780000-b37ce000 rwxp 00000000 00:00 0 
+b37ce000-b37f6000 r-xp 00000000 08:05 585523     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype141.cooja
+b37f6000-b37f7000 r-xp 00027000 08:05 585523     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype141.cooja
+b37f7000-b37f8000 rwxp 00028000 08:05 585523     /home/manu/Documents/sources/contiki/examples/ipv6/rpl-fuzzy/obj_cooja/mtype141.cooja
+b37f8000-b3800000 rwxp 00000000 00:00 0 
+b3800000-b38fe000 rwxp 00000000 00:00 0 
+b38fe000-b3900000 ---p 00000000 00:00 0 
+b3921000-b3924000 ---p 00000000 00:00 0 
+b3924000-b3972000 rwxp 00000000 00:00 0 
+b3972000-b3975000 ---p 00000000 00:00 0 
+b3975000-b39c3000 rwxp 00000000 00:00 0 
+b39c3000-b39c6000 ---p 00000000 00:00 0 
+b39c6000-b3a14000 rwxp 00000000 00:00 0 
+b3a14000-b3a17000 ---p 00000000 00:00 0 
+b3a17000-b3a65000 rwxp 00000000 00:00 0 
+b3a65000-b3dc6000 rwxs 00000000 00:04 50200591   /SYSV00000000 (deleted)
+b3dc6000-b3e00000 r-xs 001e1000 08:05 579634     /home/manu/Documents/sources/contiki/tools/cooja/apps/avrora/lib/avrora-small.jar
+b3e00000-b3ee8000 rwxp 00000000 00:00 0 
+b3ee8000-b3f00000 ---p 00000000 00:00 0 
+b3f07000-b3f1b000 r-xp 00000000 08:02 241963     /usr/lib/jvm/java-6-sun-1.6.0.26/jre/lib/i386/libnet.so
+b3f1b000-b3f1c000 rwxp 00013000 08:02 241963     /usr/lib/jvm/java-6-sun-1.6.0.26/jre/lib/i386/libnet.so
+b3f1c000-b3f1f000 ---p 00000000 00:00 0 
+b3f1f000-b3f6d000 rwxp 00000000 00:00 0 
+b3f6d000-b3f70000 ---p 00000000 00:00 0 
+b3f70000-b3fbe000 rwxp 00000000 00:00 0 
+b3fbe000-b3fc1000 ---p 00000000 00:00 0 
+b3fc1000-b400f000 rwxp 00000000 00:00 0 
+b400f000-b4010000 r-xs 00000000 08:02 15264      /var/cache/fontconfig/c05880de57d1f5e948fdfacc138775d9-le32d4.cache-3
+b4010000-b4016000 r-xs 00000000 08:02 15238      /var/cache/fontconfig/945677eb7aeaf62f1d50efc3fb3ec7d8-le32d4.cache-3
+b4016000-b4019000 r-xs 00000000 08:02 15230      /var/cache/fontconfig/99e8ed0e538f840c565b6ed5dad60d56-le32d4.cache-3
+b4019000-b401b000 r-xs 00000000 08:02 15080      /var/cache/fontconfig/f24b2111ab8703b4e963115a8cf14259-le32d4.cache-3
+b401b000-b401e000 r-xs 00000000 08:02 15079      /var/cache/fontconfig/e383d7ea5fbe662a33d9b44caf393297-le32d4.cache-3
+b401e000-b401f000 r-xs 00000000 08:02 14751      /var/cache/fontconfig/e7071f4a29fa870f4323321c154eba04-le32d4.cache-3
+b401f000-b4023000 r-xs 00000000 08:02 342749     /var/cache/fontconfig/926e794c3d5e5dffcaf2fa83ef8d36c2-le32d4.cache-3
+b4023000-b4026000 r-xs 00000000 08:02 1661       /var/cache/fontconfig/6eb3985aa4124903f6ff08ba781cd364-le32d4.cache-3
+b4026000-b4027000 r-xs 00000000 08:02 1660       /var/cache/fontconfig/4c73fe0c47614734b17d736dbde7580a-le32d4.cache-3
+b4027000-b4028000 r-xs 00000000 08:02 1554       /var/cache/fontconfig/0d8c3b2ac0904cb8a57a757ad11a4a08-le32d4.cache-3
+b4028000-b4029000 r-xs 00000000 08:02 1499       /var/cache/fontconfig/6a53c69dea097a2d716e069445527da8-le32d4.cache-3
+b4029000-b402d000 r-xs 00000000 08:02 1498       /var/cache/fontconfig/062808c12e6e608270f93bb230aed730-le32d4.cache-3
+b402d000-b4031000 r-xs 00000000 08:02 1497       /var/cache/fontconfig/a755afe4a08bf5b97852ceb7400b47bc-le32d4.cache-3
+b4031000-b4038000 r-xs 00000000 08:02 1481       /var/cache/fontconfig/6d41288fd70b0be22e8c3a91e032eec0-le32d4.cache-3
+b4038000-b4043000 r-xs 00000000 08:02 46600      /var/cache/fontconfig/0f34bcd4b6ee430af32735b75db7f02b-le32d4.cache-3
+b4043000-b4065000 r-xs 00000000 08:02 1295       /var/cache/fontconfig/365b55f210c0a22e9a19e35191240f32-le32d4.cache-3
+b4065000-b4067000 r-xs 00000000 08:02 1287       /var/cache/fontconfig/2c5ba8142dffc8bf0377700342b8ca1a-le32d4.cache-3
+b4067000-b406f000 r-xs 00000000 08:02 1265       /var/cache/fontconfig/d52a8644073d54c13679302ca1180695-le32d4.cache-3
+b406f000-b407d000 r-xs 00000000 08:02 310311     /var/cache/fontconfig/e13b20fdb08344e0e664864cc2ede53d-le32d4.cache-3
+b4082000-b4089000 r-xp 00000000 08:02 241964     /usr/lib/jvm/java-6-sun-1.6.0.26/jre/lib/i386/libnio.so
+b4089000-b408a000 rwxp 00006000 08:02 241964     /usr/lib/jvm/java-6-sun-1.6.0.26/jre/lib/i386/libnio.so
+b408a000-b408c000 r-xs 00007000 08:05 581220     /home/manu/Documents/sources/contiki/tools/cooja/apps/avrora/lib/cooja_avrora.jar
+b408c000-b408f000 ---p 00000000 00:00 0 
+b408f000-b40dd000 rwxp 00000000 00:00 0 
+b40dd000-b40e0000 ---p 00000000 00:00 0 
+b40e0000-b412e000 rwxp 00000000 00:00 0 
+b412e000-b4132000 r-xp 00000000 08:02 18946      /usr/lib/libXfixes.so.3.1.0
+b4132000-b4133000 r-xp 00003000 08:02 18946      /usr/lib/libXfixes.so.3.1.0
+b4133000-b4134000 rwxp 00004000 08:02 18946      /usr/lib/libXfixes.so.3.1.0
+b4134000-b413c000 r-xp 00000000 08:02 7389       /usr/lib/libXrender.so.1.3.0
+b413c000-b413d000 r-xp 00007000 08:02 7389       /usr/lib/libXrender.so.1.3.0
+b413d000-b413e000 rwxp 00008000 08:02 7389       /usr/lib/libXrender.so.1.3.0
+b413e000-b4146000 r-xp 00000000 08:02 124118     /usr/lib/libXcursor.so.1.0.2
+b4146000-b4147000 r-xp 00007000 08:02 124118     /usr/lib/libXcursor.so.1.0.2
+b4147000-b4148000 rwxp 00008000 08:02 124118     /usr/lib/libXcursor.so.1.0.2
+b4149000-b414a000 r-xs 00003000 08:05 580227     /home/manu/Documents/sources/contiki/tools/cooja/apps/mspsim/lib/coffee.jar
+b414a000-b4153000 r-xs 0008e000 08:05 581040     /home/manu/Documents/sources/contiki/tools/cooja/apps/mspsim/lib/mspsim.jar
+b4153000-b4157000 r-xs 0002a000 08:05 581193     /home/manu/Documents/sources/contiki/tools/cooja/apps/mspsim/lib/cooja_mspsim.jar
+b4157000-b415f000 r-xs 00115000 08:02 242018     /usr/lib/jvm/java-6-sun-1.6.0.26/jre/lib/resources.jar
+b415f000-b4162000 ---p 00000000 00:00 0 
+b4162000-b41b0000 rwxp 00000000 00:00 0 
+b41b0000-b4229000 r-xp 00000000 08:02 241988     /usr/lib/jvm/java-6-sun-1.6.0.26/jre/lib/i386/libfontmanager.so
+b4229000-b4233000 rwxp 00078000 08:02 241988     /usr/lib/jvm/java-6-sun-1.6.0.26/jre/lib/i386/libfontmanager.so
+b4233000-b4238000 rwxp 00000000 00:00 0 
+b4238000-b423c000 r-xp 00000000 08:02 43742      /usr/lib/libXdmcp.so.6.0.0
+b423c000-b423d000 r-xp 00003000 08:02 43742      /usr/lib/libXdmcp.so.6.0.0
+b423d000-b423e000 rwxp 00004000 08:02 43742      /usr/lib/libXdmcp.so.6.0.0
+b423e000-b4256000 r-xp 00000000 08:02 89888      /usr/lib/libxcb.so.1.1.0
+b4256000-b4257000 r-xp 00017000 08:02 89888      /usr/lib/libxcb.so.1.1.0
+b4257000-b4258000 rwxp 00018000 08:02 89888      /usr/lib/libxcb.so.1.1.0
+b4258000-b4264000 r-xp 00000000 08:02 28336      /usr/lib/libXi.so.6.1.0
+b4264000-b4265000 r-xp 0000c000 08:02 28336      /usr/lib/libXi.so.6.1.0
+b4265000-b4266000 rwxp 0000d000 08:02 28336      /usr/lib/libXi.so.6.1.0
+b4266000-b426a000 r-xp 00000000 08:02 28351      /usr/lib/libXtst.so.6.1.0
+b426a000-b426b000 r-xp 00003000 08:02 28351      /usr/lib/libXtst.so.6.1.0
+b426b000-b426c000 rwxp 00004000 08:02 28351      /usr/lib/libXtst.so.6.1.0
+b426c000-b4385000 r-xp 00000000 08:02 28304      /usr/lib/libX11.so.6.3.0
+b4385000-b4386000 r-xp 00118000 08:02 28304      /usr/lib/libX11.so.6.3.0
+b4386000-b4388000 rwxp 00119000 08:02 28304      /usr/lib/libX11.so.6.3.0
+b4388000-b4389000 rwxp 00000000 00:00 0 
+b4389000-b43cc000 r-xp 00000000 08:02 241982     /usr/lib/jvm/java-6-sun-1.6.0.26/jre/lib/i386/xawt/libmawt.so
+b43cc000-b43ce000 rwxp 00043000 08:02 241982     /usr/lib/jvm/java-6-sun-1.6.0.26/jre/lib/i386/xawt/libmawt.so
+b43ce000-b43cf000 rwxp 00000000 00:00 0 
+b43cf000-b4454000 r-xp 00000000 08:02 241978     /usr/lib/jvm/java-6-sun-1.6.0.26/jre/lib/i386/libawt.so
+b4454000-b445b000 rwxp 00085000 08:02 241978     /usr/lib/jvm/java-6-sun-1.6.0.26/jre/lib/i386/libawt.so
+b445b000-b447f000 rwxp 00000000 00:00 0 
+b447f000-b4480000 ---p 00000000 00:00 0 
+b4480000-b4500000 rwxp 00000000 00:00 0 
+b4500000-b45ff000 rwxp 00000000 00:00 0 
+b45ff000-b4600000 ---p 00000000 00:00 0 
+b4600000-b4601000 r-xs 00002000 08:05 581244     /home/manu/Documents/sources/contiki/tools/cooja/apps/collect-view/cooja-collect-view.jar
+b4601000-b4603000 r-xp 00000000 08:02 38105      /usr/lib/libXau.so.6.0.0
+b4603000-b4604000 r-xp 00001000 08:02 38105      /usr/lib/libXau.so.6.0.0
+b4604000-b4605000 rwxp 00002000 08:02 38105      /usr/lib/libXau.so.6.0.0
+b4605000-b4613000 r-xp 00000000 08:02 28320      /usr/lib/libXext.so.6.4.0
+b4613000-b4614000 r-xp 0000d000 08:02 28320      /usr/lib/libXext.so.6.4.0
+b4614000-b4615000 rwxp 0000e000 08:02 28320      /usr/lib/libXext.so.6.4.0
+b4615000-b4616000 r-xs 00003000 08:05 581232     /home/manu/Documents/sources/contiki/tools/cooja/apps/serial_socket/lib/serial_socket.jar
+b4616000-b4618000 r-xs 00010000 08:05 581041     /home/manu/Documents/sources/contiki/tools/cooja/apps/mspsim/lib/jipv6.jar
+b4618000-b461b000 r-xs 00000000 08:02 1332       /var/cache/fontconfig/d60319d88cac85ba9e1a07bd06cfbb8c-le32d4.cache-3
+b461b000-b461e000 r-xs 00000000 08:02 1235       /var/cache/fontconfig/7ef2298fde41cc6eeb7af42e48b7d293-le32d4.cache-3
+b461e000-b462c000 r-xs 00000000 08:02 310345     /var/cache/fontconfig/865f88548240fee46819705c6468c165-le32d4.cache-3
+b462c000-b4633000 r-xs 0004f000 08:05 580032     /home/manu/Documents/sources/contiki/tools/cooja/lib/log4j.jar
+b4633000-b4636000 r-xs 00022000 08:05 580031     /home/manu/Documents/sources/contiki/tools/cooja/lib/jdom.jar
+b4636000-b4639000 ---p 00000000 00:00 0 
+b4639000-b4687000 rwxp 00000000 00:00 0 
+b4687000-b468a000 ---p 00000000 00:00 0 
+b468a000-b4708000 rwxp 00000000 00:00 0 
+b4708000-b470b000 ---p 00000000 00:00 0 
+b470b000-b4759000 rwxp 00000000 00:00 0 
+b4759000-b4760000 r-xs 00000000 08:02 88550      /usr/lib/gconv/gconv-modules.cache
+b4760000-b479f000 r-xp 00000000 08:02 51679      /usr/lib/locale/fr_FR.utf8/LC_CTYPE
+b479f000-b47a2000 ---p 00000000 00:00 0 
+b47a2000-b47f0000 rwxp 00000000 00:00 0 
+b47f0000-b47f3000 ---p 00000000 00:00 0 
+b47f3000-b4875000 rwxp 00000000 00:00 0 
+b4875000-b4a0d000 r-xs 03029000 08:02 242205     /usr/lib/jvm/java-6-sun-1.6.0.26/jre/lib/rt.jar
+b4a0d000-b4a0e000 ---p 00000000 00:00 0 
+b4a0e000-b4a95000 rwxp 00000000 00:00 0 
+b4a95000-b4aaf000 rwxp 00000000 00:00 0 
+b4aaf000-b4ab5000 rwxp 00000000 00:00 0 
+b4ab5000-b4b5a000 rwxp 00000000 00:00 0 
+b4b5a000-b4b5d000 rwxp 00000000 00:00 0 
+b4b5d000-b4baf000 rwxp 00000000 00:00 0 
+b4baf000-b4bb5000 rwxp 00000000 00:00 0 
+b4bb5000-b4c5a000 rwxp 00000000 00:00 0 
+b4c5a000-b4c60000 rwxp 00000000 00:00 0 
+b4c60000-b4c7a000 rwxp 00000000 00:00 0 
+b4c7a000-b4c8d000 rwxp 00000000 00:00 0 
+b4c8d000-b4d06000 rwxp 00000000 00:00 0 
+b4d06000-b4ea6000 rwxp 00000000 00:00 0 
+b4ea6000-b6d06000 rwxp 00000000 00:00 0 
+b6d06000-b6d15000 r-xp 00000000 08:02 241959     /usr/lib/jvm/java-6-sun-1.6.0.26/jre/lib/i386/libzip.so
+b6d15000-b6d17000 rwxp 0000e000 08:02 241959     /usr/lib/jvm/java-6-sun-1.6.0.26/jre/lib/i386/libzip.so
+b6d17000-b6d21000 r-xp 00000000 08:02 137071     /lib/tls/i686/cmov/libnss_files-2.11.1.so
+b6d21000-b6d22000 r-xp 00009000 08:02 137071     /lib/tls/i686/cmov/libnss_files-2.11.1.so
+b6d22000-b6d23000 rwxp 0000a000 08:02 137071     /lib/tls/i686/cmov/libnss_files-2.11.1.so
+b6d23000-b6d2b000 r-xp 00000000 08:02 158575     /lib/tls/i686/cmov/libnss_nis-2.11.1.so
+b6d2b000-b6d2c000 r-xp 00007000 08:02 158575     /lib/tls/i686/cmov/libnss_nis-2.11.1.so
+b6d2c000-b6d2d000 rwxp 00008000 08:02 158575     /lib/tls/i686/cmov/libnss_nis-2.11.1.so
+b6d2d000-b6d40000 r-xp 00000000 08:02 135965     /lib/tls/i686/cmov/libnsl-2.11.1.so
+b6d40000-b6d41000 r-xp 00012000 08:02 135965     /lib/tls/i686/cmov/libnsl-2.11.1.so
+b6d41000-b6d42000 rwxp 00013000 08:02 135965     /lib/tls/i686/cmov/libnsl-2.11.1.so
+b6d42000-b6d44000 rwxp 00000000 00:00 0 
+b6d44000-b6d46000 r-xs 0001a000 08:05 581037     /home/manu/Documents/sources/contiki/tools/cooja/apps/mrm/lib/mrm.jar
+b6d46000-b6d53000 rwxp 00000000 00:00 0 
+b6d53000-b6d5b000 rwxs 00000000 08:02 11979      /tmp/hsperfdata_manu/27678
+b6d5b000-b6d7e000 r-xp 00000000 08:02 241955     /usr/lib/jvm/java-6-sun-1.6.0.26/jre/lib/i386/libjava.so
+b6d7e000-b6d80000 rwxp 00023000 08:02 241955     /usr/lib/jvm/java-6-sun-1.6.0.26/jre/lib/i386/libjava.so
+b6d80000-b6d87000 r-xp 00000000 08:02 158593     /lib/tls/i686/cmov/librt-2.11.1.so
+b6d87000-b6d88000 r-xp 00006000 08:02 158593     /lib/tls/i686/cmov/librt-2.11.1.so
+b6d88000-b6d89000 rwxp 00007000 08:02 158593     /lib/tls/i686/cmov/librt-2.11.1.so
+b6d89000-b6d8c000 ---p 00000000 00:00 0 
+b6d8c000-b6dda000 rwxp 00000000 00:00 0 
+b6dda000-b6dfe000 r-xp 00000000 08:02 127031     /lib/tls/i686/cmov/libm-2.11.1.so
+b6dfe000-b6dff000 r-xp 00023000 08:02 127031     /lib/tls/i686/cmov/libm-2.11.1.so
+b6dff000-b6e00000 rwxp 00024000 08:02 127031     /lib/tls/i686/cmov/libm-2.11.1.so
+b6e00000-b72e1000 r-xp 00000000 08:02 241946     /usr/lib/jvm/java-6-sun-1.6.0.26/jre/lib/i386/client/libjvm.so
+b72e1000-b7304000 rwxp 004e1000 08:02 241946     /usr/lib/jvm/java-6-sun-1.6.0.26/jre/lib/i386/client/libjvm.so
+b7304000-b7721000 rwxp 00000000 00:00 0 
+b7721000-b7874000 r-xp 00000000 08:02 96547      /lib/tls/i686/cmov/libc-2.11.1.so
+b7874000-b7875000 ---p 00153000 08:02 96547      /lib/tls/i686/cmov/libc-2.11.1.so
+b7875000-b7877000 r-xp 00153000 08:02 96547      /lib/tls/i686/cmov/libc-2.11.1.so
+b7877000-b7878000 rwxp 00155000 08:02 96547      /lib/tls/i686/cmov/libc-2.11.1.so
+b7878000-b787b000 rwxp 00000000 00:00 0 
+b787b000-b787d000 r-xp 00000000 08:02 127010     /lib/tls/i686/cmov/libdl-2.11.1.so
+b787d000-b787e000 r-xp 00001000 08:02 127010     /lib/tls/i686/cmov/libdl-2.11.1.so
+b787e000-b787f000 rwxp 00002000 08:02 127010     /lib/tls/i686/cmov/libdl-2.11.1.so
+b787f000-b7886000 r-xp 00000000 08:02 241958     /usr/lib/jvm/java-6-sun-1.6.0.26/jre/lib/i386/jli/libjli.so
+b7886000-b7888000 rwxp 00006000 08:02 241958     /usr/lib/jvm/java-6-sun-1.6.0.26/jre/lib/i386/jli/libjli.so
+b7888000-b7889000 rwxp 00000000 00:00 0 
+b7889000-b789e000 r-xp 00000000 08:02 158590     /lib/tls/i686/cmov/libpthread-2.11.1.so
+b789e000-b789f000 r-xp 00014000 08:02 158590     /lib/tls/i686/cmov/libpthread-2.11.1.so
+b789f000-b78a0000 rwxp 00015000 08:02 158590     /lib/tls/i686/cmov/libpthread-2.11.1.so
+b78a0000-b78a2000 rwxp 00000000 00:00 0 
+b78a2000-b78a3000 r-xs 00000000 08:02 103569     /var/cache/fontconfig/4794a0821666d79190d59a36cb4f44b5-le32d4.cache-3
+b78a3000-b78a9000 r-xp 00000000 08:02 136301     /lib/tls/i686/cmov/libnss_compat-2.11.1.so
+b78a9000-b78aa000 r-xp 00006000 08:02 136301     /lib/tls/i686/cmov/libnss_compat-2.11.1.so
+b78aa000-b78ab000 rwxp 00007000 08:02 136301     /lib/tls/i686/cmov/libnss_compat-2.11.1.so
+b78ab000-b78ac000 rwxp 00000000 00:00 0 
+b78ac000-b78ad000 r-xp 00000000 00:00 0 
+b78ad000-b78b8000 r-xp 00000000 08:02 241954     /usr/lib/jvm/java-6-sun-1.6.0.26/jre/lib/i386/libverify.so
+b78b8000-b78b9000 rwxp 0000b000 08:02 241954     /usr/lib/jvm/java-6-sun-1.6.0.26/jre/lib/i386/libverify.so
+b78b9000-b78bb000 rwxp 00000000 00:00 0 
+b78bb000-b78bc000 r-xp 00000000 00:00 0          [vdso]
+b78bc000-b78d7000 r-xp 00000000 08:02 40758      /lib/ld-2.11.1.so
+b78d7000-b78d8000 r-xp 0001a000 08:02 40758      /lib/ld-2.11.1.so
+b78d8000-b78d9000 rwxp 0001b000 08:02 40758      /lib/ld-2.11.1.so
+bfe95000-bfeaa000 rwxp 00000000 00:00 0          [stack]
+
+VM Arguments:
+jvm_args: -Xmx512m -Duser.language=en 
+java_command: se.sics.cooja.GUI
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+JAVA_HOME=/usr/lib/jvm/java-6-sun
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/opt/msp430-gcc-4.4.5/bin
+USERNAME=manu
+LD_LIBRARY_PATH=/usr/lib/jvm/java-6-sun-1.6.0.26/jre/lib/i386/client:/usr/lib/jvm/java-6-sun-1.6.0.26/jre/lib/i386:/usr/lib/jvm/java-6-sun-1.6.0.26/jre/../lib/i386:.
+SHELL=/bin/bash
+DISPLAY=:0.0
+
+Signal Handlers:
+SIGSEGV: [libjvm.so+0x469ec0], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGBUS: [libjvm.so+0x469ec0], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGFPE: [libjvm.so+0x38bf10], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGPIPE: [libjvm.so+0x38bf10], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGXFSZ: [libjvm.so+0x38bf10], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGILL: [libjvm.so+0x38bf10], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGUSR1: SIG_DFL, sa_mask[0]=0x00000000, sa_flags=0x00000000
+SIGUSR2: [libjvm.so+0x38f150], sa_mask[0]=0x00000004, sa_flags=0x10000004
+SIGHUP: [libjvm.so+0x38ed30], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGINT: [libjvm.so+0x38ed30], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGTERM: [libjvm.so+0x38ed30], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGQUIT: [libjvm.so+0x38ed30], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+
+
+---------------  S Y S T E M  ---------------
+
+OS:squeeze/sid
+
+uname:Linux 2.6.32-34-generic #73-Ubuntu SMP Thu Aug 11 17:07:31 UTC 2011 i686
+libc:glibc 2.11.1 NPTL 2.11.1 
+rlimit: STACK 8192k, CORE 0k, NPROC infinity, NOFILE 1024, AS infinity
+load average:0.91 0.55 0.43
+
+/proc/meminfo:
+MemTotal:        2060120 kB
+MemFree:          362476 kB
+Buffers:          184020 kB
+Cached:           991512 kB
+SwapCached:        38228 kB
+Active:          1086848 kB
+Inactive:         370332 kB
+Active(anon):     137676 kB
+Inactive(anon):   151308 kB
+Active(file):     949172 kB
+Inactive(file):   219024 kB
+Unevictable:           0 kB
+Mlocked:               0 kB
+HighTotal:       1186352 kB
+HighFree:          18264 kB
+LowTotal:         873768 kB
+LowFree:          344212 kB
+SwapTotal:       2554292 kB
+SwapFree:        2341668 kB
+Dirty:                88 kB
+Writeback:             0 kB
+AnonPages:        266320 kB
+Mapped:           110320 kB
+Shmem:              7360 kB
+Slab:             150352 kB
+SReclaimable:     137956 kB
+SUnreclaim:        12396 kB
+KernelStack:        2376 kB
+PageTables:         6152 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:     3584352 kB
+Committed_AS:    1140752 kB
+VmallocTotal:     122880 kB
+VmallocUsed:       62208 kB
+VmallocChunk:      52220 kB
+HardwareCorrupted:     0 kB
+HugePages_Total:       0
+HugePages_Free:        0
+HugePages_Rsvd:        0
+HugePages_Surp:        0
+Hugepagesize:       4096 kB
+DirectMap4k:      872440 kB
+DirectMap4M:       36864 kB
+
+
+CPU:total 2 (1 cores per cpu, 2 threads per core) family 15 model 4 stepping 3, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ht
+
+/proc/cpuinfo:
+processor	: 0
+vendor_id	: GenuineIntel
+cpu family	: 15
+model		: 4
+model name	: Intel(R) Pentium(R) 4 CPU 3.40GHz
+stepping	: 3
+cpu MHz		: 3391.922
+cache size	: 2048 KB
+physical id	: 0
+siblings	: 2
+core id		: 0
+cpu cores	: 1
+apicid		: 0
+initial apicid	: 0
+fdiv_bug	: no
+hlt_bug		: no
+f00f_bug	: no
+coma_bug	: no
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 5
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe nx lm constant_tsc pebs bts pni dtes64 monitor ds_cpl est cid cx16 xtpr
+bogomips	: 6783.84
+clflush size	: 64
+cache_alignment	: 128
+address sizes	: 36 bits physical, 48 bits virtual
+power management:
+
+processor	: 1
+vendor_id	: GenuineIntel
+cpu family	: 15
+model		: 4
+model name	: Intel(R) Pentium(R) 4 CPU 3.40GHz
+stepping	: 3
+cpu MHz		: 3391.922
+cache size	: 2048 KB
+physical id	: 0
+siblings	: 2
+core id		: 0
+cpu cores	: 1
+apicid		: 1
+initial apicid	: 1
+fdiv_bug	: no
+hlt_bug		: no
+f00f_bug	: no
+coma_bug	: no
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 5
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe nx lm constant_tsc pebs bts pni dtes64 monitor ds_cpl est cid cx16 xtpr
+bogomips	: 6783.16
+clflush size	: 64
+cache_alignment	: 128
+address sizes	: 36 bits physical, 48 bits virtual
+power management:
+
+
+
+Memory: 4k page, physical 2060120k(362476k free), swap 2554292k(2341668k free)
+
+vm_info: Java HotSpot(TM) Client VM (20.1-b02) for linux-x86 JRE (1.6.0_26-b03), built on May  4 2011 01:23:42 by "java_re" with gcc 3.2.1-7a (J2SE release)
+
+time: Tue Sep 20 16:53:20 2011
+elapsed time: 217 seconds
+
